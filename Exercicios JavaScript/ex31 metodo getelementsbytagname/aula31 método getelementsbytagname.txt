@@ -1,0 +1,3 @@
+aula31 método getelementsbytagname
+
+as diferença do tag para o id é que ele retorna uma coleção de elementos tag - htmlcollections

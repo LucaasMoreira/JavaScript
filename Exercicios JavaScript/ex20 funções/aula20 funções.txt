@@ -1,0 +1,16 @@
+aula21 funções
+
+funções - bloco de comando que eu posso executar em um momento que eu precisar
+ 
+
+function nome(){      - () declaração da função
+ console.log()
+}
+
+para chamar a função basta colocar o nome dela a como:
+
+function nome(){
+ console.log()
+}
+
+nome()      - chamada da função 

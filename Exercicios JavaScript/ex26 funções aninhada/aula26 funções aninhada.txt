@@ -1,0 +1,14 @@
+aula26 funções aninhada
+
+const soma = (...valores)=>{
+    const resultado(var){
+    let res = 0
+    for(v of var){
+       res+= v
+       }
+    resturn res
+    }
+resturn resultado(valores)
+}
+
+console.log(soma(10,5,15))

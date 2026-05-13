@@ -1,0 +1,31 @@
+aula5 operadores relacionais
+
+são operadores que vão realizar uma operação e vão retorna um valor true ou false diante da operação relacionável
+
+oque são operadores relacionáveis?
+
+são operadores de comparação
+
+são eles
+
+>  maior
+>=  maior ou igual
+<  menor
+<=  menor ou igual
+==  igual(comparação)
+!=  diferente - basicamente ele inverte o valor dependendo se for true ou false,
+pensa como se fosse essa pergunta 'num1 é diferente(!=) de num3'  resultado = false, não é diferente
+
+
+tem um jeito de negar que seria usando
+
+!() - not
+
+exemplo:
+
+let num1 = 10
+let num3 = 10
+
+então se o console.log() mostrasse true mas depois eu colocava o 'not'
+
+console.log(!(num1 == num3))   - ele mostraria false pr ele inverteu o valor ele negou o 'true'

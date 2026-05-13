@@ -1,0 +1,53 @@
+aula15 loop for em js
+
+falando sobre estruturas de repetição
+
+começando com loop - repetir um broco de comando ou um comando só
+
+as repetições de loops são chamadas de repetições
+
+vamos aderir repetição como ' interação '
+
+os loops nos podemos classificar como definidos ou indefinidos
+exemplo:
+
+definidos: loops que eu sei a quantidade de vezes que eu sei que vou repetir
+
+indefinidos: quantidades que n sei quantos vou aderir a repetição
+
+
+
+o loop de hoje que vamos aprender é 'for' um loop 'definido'
+o 'for' seria traduzido como se fosse 'para'
+
+o for tem 3 configurações, irei passar traduzido so pra simplificar
+
+for(inicialização, condição, incremento)
+
+uma coisa boa é que se tiver 1 comando nos n precisa colocar chaves, que nem o 'if'
+
+
+explicando:
+
+for(let i = 0, i < 10, i++){   - se for verdadeiro ele vai executar o código ate o 'i' chegar a 10, dps disso ele para, sai e segue
+   console.log('repetira 10x')      o comandos a seguir
+
+}
+
+
+tomar cuidado em fazer loop infinito, que acho que seria difícil alguém csg fazer isso
+
+
+e também da para nos adicionar outras coisas além de string dentro do 'for' como 'if'
+
+for(let i = 0, i < 10, i++){
+   if(i%2 == 0){
+  console.log('par')
+}
+else{
+ console.log(impar)
+}
+}
+
+
+ou seja enquanto 'for' for verdadeiro ele vai vereficar o if 10x, caso o resto de i divido por 2 for igual a 0, fala par, se n impar

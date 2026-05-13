@@ -1,0 +1,95 @@
+aula28 método map
+
+basicamente ela percorre arrays e coleções 
+
+eu vou usar para quando eu precisar trabalhar de elemento por elemento
+ele vai inteirar todo o elemento
+
+const curso = ['HTML', 'JS', 'PHP', 'REACT', 'css']
+curso.map()
+
+
+
+pro map()  -  nos pode passar 2 parâmetros ou ate 3
+
+esses parâmetro indica algo
+
+const curso = ['HTML', 'JS', 'PHP', 'REACT', 'css']
+curso.map(el, i)
+
+o
+
+1 parâmetro indica com base do 2 parâmetro - percorre o elemento(índice)
+2 parâmetro indica - índice do elemento, ou seja a posição
+
+
+se eu for executar alguma coisa no map. nos faz uma função
+vamos usar Arrow function
+
+const curso = ['HTML', 'JS', 'PHP', 'REACT', 'css']
+curso.map((el,i)=>{
+
+})
+
+
+
+eu posso usar o for só que quando quero parar em algum lugar e etc.
+
+já o map é bom pq ele percorre tudo retorna tudo sem interrupções
+
+
+
+eu posso usar o return tbm
+
+const curso = ['HTML', 'JS', 'PHP', 'REACT', 'css']
+let c =curso.map((el,i)=>{
+    return el
+})
+
+console.log(c)  - retornar todos os elementos
+
+
+
+
+vamos agora obter uma coleção do html e operar de alguma forma
+
+const el = document.GetElementsByTagName('div')   -  obter os elementos pelo nome da tag
+
+quando tem htmlcollection nos tem 2 maneiras de usar o map
+
+
+se eu fazer
+
+const el = document.GetElementsByTagName('div')
+el.map((e,i)=>{
+  console.log(e)
+})
+
+vai dar erro pq vai fala que o el.map n é interavel -  um array que n é array ou seja ele acaba n entregando colecoes
+
+
+para resolver nos pode usar
+
+1 - spread
+
+
+const el = document.GetElementsByTagName('div')
+let el2 = [...el]
+el.map((e,i)=>{
+  console.log(el)
+})
+
+
+agora eu posso como exemplo pegar oque que tem cada uma destas divs
+com o  'console.log(el.innerHTML)'
+
+
+ou mudar as divs simultaneamente
+
+el.innerhtml = 'curso'
+
+
+s
+
+
+

@@ -1,0 +1,23 @@
+aula24 funções anônimas
+
+são funções que não possuem um nome associado a seu conteúdo
+
+ela so vai ser executada QUANDO FOR CHAMADA e quando for executado o programa
+
+
+ela funciona como uma função padrão só muda umas característica ela n possuem um nome pra essa função
+
+nos tira o nome da função mas nos precisa associar ela
+
+operador new - função construtor
+
+uma função construtor ele serve pra uma função mais simples, quando soma 2 valores e ai vai
+
+exemplo:
+
+const f =new Function(v1,v2, "return v1+v2")    -  preciso passar tudo para dentro nos parâmetros da funçao
+
+
+os v1,v2 seri chmados de 'ARGUMENTO'  
+nos function nos precisa colocr o 'F' maiusculo
+e assume aspa em tudo

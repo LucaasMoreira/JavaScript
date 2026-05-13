@@ -1,0 +1,20 @@
+aula29 operdor this
+
+this indica como se o this.nome fosse uma variável dedicada a função, basicamente quando se quer usar o mesmo nome da variável para o parâmetro ai que o this entra ele distingui a diferença para qual é o da funçao  exemplo a baixo
+
+function aluno(nome,nota){
+   this.nome=nome
+   this.nota=nota
+
+  console.logt(nome,nota)
+}
+
+aluno('bruno', 100)
+
+
+novas coisas que vai ser estudado no futuro
+setTimeout()  -  conta o tempo ate oque eu defini e depois vence
+
+complementndo o arrow function
+
+As arrow functions não possuem seu próprio escopo this. Em vez disso, elas herdam o valor do this do contexto em que foram definidas

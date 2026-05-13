@@ -1,0 +1,17 @@
+aula09 pos incremento e pre incremento
+
+pos incrementoe
+
+ele adiciona o valor depois do console.log(exemplo) imprimir que seria i++
+
+pre incremento
+
+ele adiciona o valor antes do console.log imprimi
+
+isso serve pros outros valores
++=
+-=
+--
+++
+
+e ai vai

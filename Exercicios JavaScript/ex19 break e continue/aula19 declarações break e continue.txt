@@ -1,0 +1,6 @@
+aula19 declarações break e continue
+
+
+break - encerra o loop(programa) e continua o outro programa
+
+continue - quando ele executa dentro de um loop ele para somente aquela interação  e pula pra próxima dependendo do operadores for verdadeiro praticamente.

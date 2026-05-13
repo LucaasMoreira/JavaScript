@@ -1,0 +1,17 @@
+.mudar1{
+    background-color: black;
+    color: white;
+}
+
+.mudar2{
+    background-color: blueviolet;
+    color: white;
+}
+
+.destaque{
+    background-color: red; !important
+    color: white; !important
+}
+.destaque:hover{
+    color: yellow;
+}

@@ -1,0 +1,57 @@
+aula12 operador spread
+
+significa espalhar
+
+e oque ele faz?
+basicamente quebra o array
+
+ele quebra o conjunto de elemento e devolve elemento a elemento
+
+começando:
+
+umas das funções do spread é
+
+copiar um array
+exemplo:
+
+n1=[10,20,30]
+n2=[...n1]
+console.log()
+
+
+basicamente o n2 esta recebendo o n1
+ou seja eu vou 'espalhar' os arrays do elemento n1 para o n3
+
+nesta situação não faz muita diferença de eu usat o spread, pq eu poderia também ter
+dado o mesmo valor(copiado) para o n2
+
+n2=n1
+
+ate agora so vimos que ele csg fazer espalhamento, ele pega os elementos de um array e retorna elemento por elemento
+
+além de operações com arrays agente pode usar os spread também pra fazer uma junção de dois arrays
+
+jgd1=[vida1,vida2]
+jgd2=[vida1,vida3]
+jgd3=[...jgd1,...jgd3]
+
+console.log(jgd3)
+
+quando eu der console.log ele vai imprimir o jgd2
+mas pq isso aconteceu
+
+pq oque eu tenho exatamente no jgd1 eu tenho também no jgd2
+já que os dados são os mesmo ele vai usar os dados do ultimo jogador
+
+
+
+outra vantagen do operador spread é
+
+eu pegar um grupo de elementos(div) e trazer pro java script
+
+coleção de elementos é diferente de arrays
+
+let n3 =[...documentgetelementytagname(div) - com spreed
+
+ou seja diferente de coleções so recebe elementos html
+agr quando tenho um array usando spreed eu posso colocar outros tipos de elemento

@@ -1,0 +1,32 @@
+aula 03 diferenças de variáveis
+
+
+variável
+
+eu posso criar quantas variáveis eu quiser, mas gasta mais memoria
+
+var - maneira antiga de criar variável pode escapar da caixa
+
+
+para resolver este problema foi criado o let
+
+let - é uma variável ou seja a qualquer momento eu posso ir na variável e alterar o conteúdo
+
+eu consigo tbm alterar a variável com um tipo de valor diferente ex: '10'
+
+
+const - o valor da variável n pode ser mais alterado no meio do programa
+
+
+níveis de acesso nas variável
+
+Quando um programa em JavaScript começa, ele cria uma caixa principal. Tudo que você escreve normalmente fica dentro dessa caixa principal.
+Algumas estruturas do código, como if, for ou funções, criam uma nova caixa dentro da caixa principal, como se fosse uma caixa menor dentro de outra maior.
+Existe uma regra simples para entender isso:
+Uma caixa de dentro consegue ver o que está na caixa de fora.
+Uma caixa de fora não consegue ver o que está dentro da caixa menor.
+Ou seja, algo criado dentro de uma caixa menor normalmente não pode ser usado fora dela.
+As variáveis let e const seguem exatamente essa regra. Elas só existem dentro da caixa onde foram criadas. Se tentar usar fora, o JavaScript não encontra.
+Já a variável var é diferente. Mesmo sendo criada dentro de uma caixa menor, ela acaba aparecendo na caixa maior, como se tivesse escapado. Por isso ela pode causar confusão ou erros no código.
+Por causa disso, hoje em dia os programadores preferem usar const ou let, e evitam usar var.
+

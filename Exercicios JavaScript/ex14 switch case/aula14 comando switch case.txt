@@ -1,0 +1,32 @@
+aula14 comando switch case
+
+ele avalia uma expressão e de acordo com o resultado desta expressão ele compara com os cases que ta programado para um certo resultado
+caso não concede com nenhum dos case ele cai para o default
+
+para nos usar este comando nos coloca 'switch', vamos ver exemplos:
+
+let colocação = 1
+
+switch(colocaçao){
+    case 1:             - então seria ' caso a colocação for o numero '1' ele vai executar o comando
+       console.log()
+       break            - a cada final de bloco eu tenho que colocar 'break' para ele parar aquela execução
+    case 2:             - se n conceder o case de cima vai ver esse daqui
+       console.log()
+       break
+    default:            - se n forem nenhum dos case cai aqui no 'default' o padrão 
+       console.log()
+       break
+}
+
+
+
+eu também  posso criar e avaliar vários cases exemplo:
+
+case 2: case 3: case 4:           - caso(case) a colocação for 2,3,4 ele vai imprimir algo, ou seja ele pode verificar vários de uma vez
+       console.log()
+       break
+
+
+
+os switch case é uma alternativa do if caso eu queira algo especifico ou testar uma condição especial para uma avaliaçao

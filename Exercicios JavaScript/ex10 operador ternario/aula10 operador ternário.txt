@@ -1,0 +1,34 @@
+aula09 operador ternário
+
+seria uma forma de reduzir ou de simplificar uma operação 
+
+operador ternário é
+
+'?'
+
+vamos entender
+
+exemplo:
+
+//0 é igual a false
+//1 é igual a true
+
+então vamos ver em uma operação 
+
+res=(num1%2 ? 'par' : 'impar')
+
+
+
+o operador ternário ele realiza a operação e se a operação dar verdadeiro ele retorna o primeiro valor
+se for falso ele retorna o 2 valor
+
+como nos quer que retorna par ou impar direito e não ao contrario nos usa o operador de negação para inverter os valore
+que seria
+
+!()
+
+
+para simplificar vou colocar a sintaxe da operação ternaria
+
+teste logico ? se verdadeiro : se false
+

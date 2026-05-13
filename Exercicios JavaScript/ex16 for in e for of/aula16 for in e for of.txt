@@ -1,0 +1,34 @@
+aula16 for in e for of
+
+existe duas variações de for o for if  eo for of
+
+coisas para saber
+.lenght - é o comprimento,relacionado a quantidade de elementos de array
+
+no for básico seria
+
+num - [10,20,30,40]
+
+for(let i = 0, i<num.lenght, i++)  - num.lenght - ele contou que a variável num tem 4 items
+console.log(i)
+
+ele vai imprimir a quantidade dos itens que é 3
+caso eu queria que ele imprimi o elemento eu adiciono pôs console.log
+
+num[i] - ele ta dizendo que vai imprimir o elemento conforme o numero do i = então começo com 0 vai imprimir o 1 valor que é o 10 e depois do incremento o i vira 1 e ele vai imprimir o segundo elemento que é o 20
+
+agora usando  for in
+
+for ( n in num)  - eu crio a variável que vai receber as posições  retornado
+
+o for in ele imprime a quantidade de itens que tem no array, caso queira o elemento ai mesma coisa que o for tradicional eu uso o
+num[i]
+
+
+o for of 
+
+sem dificuldade ele inteira diretamente os elementos do num
+
+
+tirando duvidas é como se fosse um for shorthand ou seja simplificado
+

@@ -1,0 +1,36 @@
+aula22 funções parametrizadas
+
+quando pode entrar com valores na nossa funções 
+nos coloca n chave() e vamos operar o valor na nossa operação
+
+pôs isso, para chamar a função e meio diferente
+
+nos usa normal soma() - só que dentro das chaves nos coloca o valor do parâmetro
+lembrando que o js faz conversão automática do valor
+
+posso passar qualquer valor.
+
+para chamar 2 parâmetro nos coloca ',' pôs o valor do parâmetro anterior
+
+exemplo:
+
+function soma(p1, p2){
+    console.log(p1 + p2)
+}
+
+soma(10, 5)
+
+//resultado 15
+
+
+
+nos pode fazer que os parâmetros tenham valores padrão, por que caso eu quero que so tenha 1 numero com '10' e que o p2 n somasse
+
+só eu fazer function soma(p1 = 0, p2 = 0)
+
+deste jeito o js vai entender que o p2 ta no valor padrão e n vai dar NaN
+então vou ter só o 10 no p1
+
+
+
+lembrando que return muda a situçao

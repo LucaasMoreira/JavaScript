@@ -1,0 +1,16 @@
+aula07 operadores lógicos
+
+&& - and e
+|| - or ou
+! - not não -> ele vai inverte o valor de uma operação 
+
+atalhos
+
+ctrl + ;  - agrupa em comentário
+
+sobre a 'tabela verdade'
+para nos entender qual que vai ser o resultado dos operadores lógicos
+
+o resultado de um operador logico vai ser true ou false
+
+obviamente nos não vai usar so console.log

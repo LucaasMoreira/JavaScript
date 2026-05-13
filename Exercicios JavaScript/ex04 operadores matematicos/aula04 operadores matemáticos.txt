@@ -1,0 +1,75 @@
+aula04 operadores matemáticos
+
+
++  soma
+-  subtração
+*  multiplicação
+/  divisão
+%  resto da divisao
+++ incremento
+-- decremento
+
+
+novidade
+
+eu posso declarar varias variáveis em uma linha utilizando ',' ex:
+
+let num1, num2
+
+agora para que as duas recebam atribuição é só colocar pôs o nome da variável
+
+let num1=10, num2=10
+
+outro jeito que eu posso declara é
+
+num1=num2=num3= 10  - na mesma linha
+
+to dizendo pra tecnicamente que o num1 é igual a num2 que é igual a num3 e o 'valor'
+e se eu chamar o num3 as 3 serão inicializadas(mostradas)
+
+
+ou eu posso criar em linhas separadas
+
+
+novo
+
+nos podemos trabalhar com as contas aritmética 
+
+eu posso dizer que a variável num3
+
+guarda a soma da variável num1 + num2
+
+num3 = num1 + num2
+
+
+se eu quiser eu posso realizar as operações no próprio console.log()
+
+detalhe:
+
+a regra da matemática tradicional conta no js ex:
+
+num3 = (num1 + num2)*2
+
+quando nos usa parênteses '()' ele tem precedência sobre todos os operadores 
+
+
+outros operadores
+
+
+paralelo do incremento e decremento exemplos basicos
+
++= 'valor'
+-= 'valor'
+
+seria a mesma coisas que num1=num1+'valor' ou num1=num1-'valor'
+
+o bom de usar essa forma 'paralela' seria que eu posso escolher quanto de valor vou incrementa ou decrementa
+
+
+mas também posso usar com
+
+*=
+ou
+/=
+
+e por ai vai

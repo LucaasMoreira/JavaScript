@@ -1,0 +1,17 @@
+aula 01 js
+
+console.log() - sempre quando for chamado eu vou ta imprimindo alguma coisa no console
+
+para colocar comentário
+
+toda linha que tiver //  vira um comentário de linha
+
+//oi vcs estão bem
+
+
+agora se quero um comentário de bloco ai seria
+
+/* ola pessoal */
+
+
+para o js funcionar no html nos coloca a tag script e seu link

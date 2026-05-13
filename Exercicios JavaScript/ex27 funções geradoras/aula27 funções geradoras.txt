@@ -1,0 +1,73 @@
+aula27 funções geradoras
+
+são funções que tem seu retorno adiado ate que precisamos
+então ela retorna 1 e para, na próxima vez que for chamada ela continua da onde parou
+
+para indicar que é uma função geradora colocamos '*'
+
+function* (){}
+
+para retorna nos coloca 
+
+yield = return
+
+function* cores(){
+  yield 'vermelho'
+  yield 'verde'
+}
+
+
+seguindo o ensino
+
+
+para chamar a função é diferente
+
+function* cores(){
+  yield 'vermelho'
+  yield 'verde'
+}
+
+
+const itc= cores()      -  guardo a chamada em uma variável
+console.log(itc)        -  mando ela imprimir
+
+mas n vai aparecer nada
+então nos chama deste jeito
+
+
+console.log(itc.next().value)   -  nos chama 'o próximo valor da função' resumidamente 
+
+next() - próxima execução d função
+.value - o valor do return 'quero pegar o valor'
+
+
+na próxima chamada ela vai continuar da onde parou que é o verde
+
+
+
+eu posso meio que armazena em uma variável 
+
+function* cores(){
+ const nome =  yield 'qual seu nome'
+ const esporte = yield 'qual seu esporte preferido'
+ return 'seu nome é' + nome + ' e seu esporte é' + esporte
+}
+
+console.log(itc.next().value)  -  primeiro ele chama o interetor
+console.log(itc.next('bruno').value
+
+
+
+da também para nos usa com  loops
+
+function* contator(){
+  let i = 0
+  while(true){
+  yield i++
+ }
+}
+
+console.log(contator(next().value)
+
+
+

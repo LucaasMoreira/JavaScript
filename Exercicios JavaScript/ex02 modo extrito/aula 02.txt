@@ -1,0 +1,31 @@
+aula 02
+
+modo estrito - deixar o nosso código mais limpa menos coisa inutilizáveis
+
+sobre o console.log()
+
+eu posso imprimir uma string - 'none'
+
+posso também imprimir uma variável
+
+e posso concatenar coisas tbm
+
+posso colocar uma string e associa uma variável
+
+ 
+'+'  - seria para concatenar uma variável além de conta, claro
+
+
+mas e se eu n declara a variável Lucas
+
+em js sem modo estrito é possível, n da erro
+
+mas se eu usar o modo estrito
+
+para colocar seria
+
+"use strict"
+
+
+e daria erro se n declarasse a variável pq ele vai ter cuidado com o código para n ficar bagunçado
+

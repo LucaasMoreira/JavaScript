@@ -1,0 +1,19 @@
+aula18 while e do while
+
+ambos vão executar enquanto a expressão logica for verdadeiro e também são loops que vamos usar em situações indefinidas
+
+vamos cmç
+
+nos começamos com
+
+do{ 
+}               - e no final do 'do' nos colocamos o while
+ while(){
+}
+
+
+a diferença é que no do while eu tenho a garantia que o código roda pelo menos 1 vez mesmo que seja false
+ou seja ele executa o código primeiro em vez de perguntar se é true ou false
+
+ou seja enquantomo while for verdadeiro o do continua a executar, se for false ele continua o código
+

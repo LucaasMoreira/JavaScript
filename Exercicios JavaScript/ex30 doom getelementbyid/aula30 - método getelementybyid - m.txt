@@ -1,0 +1,27 @@
+aula30 - método getelementybyid - mexendo com doom
+
+o getelementybyid - é basicamente você obter o elemento aparti do id que esta no html
+
+let dc1 = document.getelementybyid("c1")
+
+
+eu posso tbm no console.log fala oque eu quero do id que puxei
+ou seja
+
+console.log(dc1.id)    -  o id do elemento
+console.log(dc1.innerHTML)  -  o que esta escrito do elemento
+
+eu posso tbm alterar o conteúdo usando innerHTML
+
+tbm eu posso fazer um array deles caso eu tiver vários
+let dc1 = document.getelementybyid("c1")
+
+posso mostrar no console ou mudar os elementos do html utilizando 
+
+for of  
+
+tbm posso usar o método mp so pra mostrar os elementos
+
+arrayelements.map((e)=>{             - mostra no console
+console.log(e)
+})

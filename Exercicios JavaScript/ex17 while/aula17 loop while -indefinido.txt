@@ -1,0 +1,19 @@
+aula17 loop while -indefinido
+
+while - em quanto
+
+pq equanto, pq eu n tenho certeza a quantidade que eu queira executar
+
+mas temos que tomar cuidado com o loop infinito
+
+exemplos legais
+
+fazendo fatorial
+
+let num = 5
+let fat = 1
+
+while(num<= 1){
+fat = fat*num
+n--
+}

@@ -1,0 +1,82 @@
+aula34  addeventlistener
+
+eventos são acontecimentos da nossa pagina
+existe diverss formas de trabalhar com eventos
+
+basicamente os eventos cmç com 'on'
+
+vamos começar com 'onclick'
+vamos colocar na tag de um html,  lembrando que o recomendado é fazer o código no js
+
+onclick=''   -   quando clicado
+
+nos pode da um alert como exemplo
+onclick='alert("opa")'
+
+claro que nos vai chama a função
+onclick='msg()'     -   uma função localizada no js]
+
+
+
+vamos fazer a mesma coisa mas de fato no js
+criamos uma variável chamando o id
+
+const c1 = document.queryselector('#c1')
+
+
+e para adicionar um evento nos faz o seguinte
+
+const c1 = document.queryselector('#c1')
+
+c1.addeventistener()
+
+
+
+eu estou adicionando um escutador de evento
+agora ele precisa receber qual evento eu gostaria de adicionar, vamos de 'click' e o que será executado quando este evento acontecer
+
+c1.addeventistener('click',msg)     - oque será executado nos pode usar uma função ja feita e n é obrigado a colocar parênteses ()
+
+ou eu posso fazer uma função anônima
+
+c1.addeventistener('click',()=>{
+  alert()
+}
+
+ou chamar uma função tbm
+
+c1.addeventistener('click',()=>{
+  msg()
+}
+
+
+vamos adicionar um css em todos os elementos
+
+const curso=document.QuerySelectorAll('.curso')
+
+curso.map((el)=>{
+ el.addEventListener('click",(evt)=>{
+   const eba= evt.target
+   eba.ClassList.Add('.destaque')
+   console.log(el.id + 'foi clicado')  
+}
+})
+
+
+explicado
+
+
+document.querySelectorAll('.curso'): Funciona como um "scout". Ele varre o HTML e cria uma lista com todos os elementos que têm a classe .curso.
+
+map: É o distribuidor. Ele percorre essa lista um por um para que você possa dar uma ordem individual para cada elemento (como instalar o sensor de clique).
+
+el (parâmetro do loop): Representa o "elemento atual" que o loop está segurando naquele exato segundo.
+
+addEventListener('click', ...): É o "ouvindo de prontidão". Ele fica monitorando o elemento e só executa a função que está dentro dele quando o usuário realmente clica.
+
+evt (parâmetro do evento): É um pacote de informações que o navegador gera no momento do clique (contém coordenadas do mouse, qual botão foi clicado, etc).
+
+evt.target: É o "ponteiro". Dentro do pacote de informações (evt), o target é a propriedade que aponta especificamente para o elemento HTML que recebeu o clique.
+
+classList.add('destaque'): É a ação final. Ele entra na lista de classes do elemento e escreve "destaque" lá, fazendo o CSS aplicar o novo visual.
+

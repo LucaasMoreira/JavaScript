@@ -1,0 +1,26 @@
+AULA25 ARROW FUNCTION - funções anônimas
+
+que são um mecanismo que representa funções anônimas também
+
+const soma=(v1,v2)=>{return v1 + v2}
+
+=> -  vou passar meu parâmetros para cá {}
+
+se for um so parmetro nos n precis colocar ()
+
+
+const soma=n=>{return n}
+
+e tbm n preciso colocar return, pq meio que o arrow function faz já isso
+
+const soma=n=> n        -  // tanto faz usar o {} so nesta parte
+
+
+se for mais elaborado  eu preciso usar tudo
+
+
+
+coisa nova
+
+As arrow functions não possuem seu próprio escopo this. Em vez disso, elas herdam o valor do this do contexto em que foram definidas
+

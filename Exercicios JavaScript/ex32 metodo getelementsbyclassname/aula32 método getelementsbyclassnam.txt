@@ -1,0 +1,29 @@
+aula32 método getelementsbyclassname - obter class especifica
+
+ela também retorna um conjunto de elementos
+
+semelhante ao tagname podemos usar o spread... para transforma em array e com isso nos muda usando propriedades delas
+tipo map()
+
+mas vamos supor que eu queira adicionar uma classe
+vou la no css crio uma class e depois de cada propriedade eu add !important
+ex:
+
+
+
+.cs{
+background-color:red; !important
+}
+
+oque !important faz
+
+faz com que estas propriedades substituam as propriedades atuais, ignorando a pirâmides dentro do css e html
+
+
+
+ai utilizando map, para mudr nos coloca
+
+el.classlist.add()      -  nos vamos adicionar um classe a estes elementos
+
+
+podemos também criar uma variável que pega um elemento so basta adicionar um array no final sem usar spread

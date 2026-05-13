@@ -1,0 +1,44 @@
+aula13 comando if e if else
+
+basicamente quando retorna verdadeiro o if faz alguma coisa e quando retorna fase ele vai passa
+
+if(e. logica) {
+se for verdadeiro o if faz este comando
+}
+
+uma curiosidade é
+quando a declaração if possui 1 comando no seu interior eu n preciso colocar as chaves, mas n é obrigado colocar as chaves
+
+mas é literalmente 1 comando, pq se tiver 2 o if n vai considerar
+
+caso eu queira executar algo quando for false ai vem a declaração
+
+if(){}
+else{} - este daqui
+
+o 'else' seria como 'caso ao contrario'
+o if seria 'se'
+
+
+agora se eu quiser vamos supor, se ele for maior que 5
+
+ai no caso eu uso o 
+
+if 
+else if - este daqui
+else
+
+ou seja eu posso ter varias condições usando o else if, que seria uma questão mais especifica
+
+
+uma coisa importante e interessante é que eu posso fazer um aninhamento utilizando o if,else if,else
+
+que seria
+
+if(true){
+console.log()
+ if(true){}
+
+ou seja ele vai executar o primeiro if se for verdadeiro e depois vai executar o 2 if caso for verdadeiro executa se n acaba o programa
+claro que da pra montar varias possibilidades e  usar também as outras condições 
+}

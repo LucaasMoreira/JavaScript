@@ -1,0 +1,54 @@
+aula08 operadores bitwise
+
+os oper. bitwise trabalha com números binário
+
+vamos ver oque cada operador faz e exemplos
+
+& and - compara os dois números bit por bit
+exemplo:
+
+1 & 1 = 1
+qualquer outro caso '0'
+ou seja só retorna 1 onde os dois lados forem 1(uma equivalência)
+
+outro exemplo:
+ 5 & 3
+
+5 = 101(n. binário)
+3 = 011(n. binário)
+--------
+    001 -> resultado = 1
+
+
+| or - resulta em '1' se um ou ambos os bits na mesma posição forem '1', resulta em '0' se ambos forem 0
+exemplo:
+
+5 = 101(n. binário)
+3 = 011(n. binário)
+--------
+    111 -> resultado = 7
+
+
+^ xor(ou exclusivo) - só resulta em '1' se os bits comparados forem diferente se os bits forem iguais ambos 0 ou 1 resulta em '0'
+exemplo:
+
+5 = 101(n. binário)
+3 = 011(n. binário)
+--------
+    110 -> resultado = 1
+
+
+<< - deslocamento para a esquerda - eu basicamente multiplico o numero 
+
+>> - deslocamento para a direita - eu divido o numero
+
+ambos os operadores empurra a caixa dependendo de qual deslocamento
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+aula21 funções com retorno - retorna valores
+
+nos vamos utilizar
+
+return - retorna valores
+
+basicamente ele retorna o valor para onde foi chamado, então a função faz todo o processamento e o return, retorna
+
+
+e durante a execuçao eu só posso retorna 1 return
+pq pôs a execução de 1 return ele para a função 
+
+mas posso usar 2 return em situações especificas como o if e else
+

@@ -1,0 +1,32 @@
+aula33 método queryselector e queryselectorall
+
+ele obtem qualquer elemento que eu demonstrar a ele
+a diferença é que quando eu uso
+
+queryselector ele retorna só o 1 elemento que ele encontrar no html
+
+agor no caso do:
+
+queryselectorall é basicamente retorna todos o elemento que eu citar
+
+par indicar oque eu pego, é so especificar se é clss,id ou tag nos ('')
+
+. - class
+# - id
+
+
+dicas:
+
+como n aula anterior eu posso tbm indicar  posição que quero do elemento add [] a pôs ()
+
+também para especificar que eu quero outro elemento no () nos usa virgula e coloca o elemento que  quer tbm
+('div,p')
+ou especificar que seja da tag p com  class c1
+('.c1,p') 
+mos podemos especificar deste jeito
+('div[class]') - vai pegar todas as divs que tenham o atributo class junto dele (n aninhado)
+
+e pra acaba a aula tbm nos pode especidicar que quero ex: o elemento da tag p dentro do div
+
+('div > p')
+

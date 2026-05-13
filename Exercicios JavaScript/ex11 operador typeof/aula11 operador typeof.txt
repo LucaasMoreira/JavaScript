@@ -1,0 +1,18 @@
+aula10 operador typeof
+
+operador que retorna o tipo da variável
+ou seja nos consegue saber o tipo de dados que nos esta tratando
+
+novo
+
+=== - comparação estrita, ele compara a forma e o tipo evita da erro
+
+voltando pro typeof nos usa ele dentro do console pra ver neh
+
+então colocamos e dentro dele add a variável que queremos saber o tipo dela
+
+let v1= 10
+
+console.log(typeof(v1))
+
+vai imprimir 'number' pq o 'tipo' da variável v1 é numérico 

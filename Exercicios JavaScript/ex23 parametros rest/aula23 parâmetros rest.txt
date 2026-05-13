@@ -1,0 +1,47 @@
+aula23 parâmetros rest
+
+rest - seria aonde posso criar um função sem números determinados de valores
+
+pq mais que 2 valores fica difícil de fazer as coisas
+
+exemplos + estudo
+
+
+function soma(...valores){     -   para isso funciona eu add '...'  + o nome que vou dar, ta indicando que vou usar o padrão de valores 
+                                   rest agora posso passar quantos valores eu quiser
+
+
+function soma(...valores){
+     return valores.lenght     -   agora preciso saber quantos valores foram passados usando 'lenght' propriedade de comprimento
+
+
+console.log(soma(10,2,3,4,5))  -   eu vou ta passando vários números soltos e o rest vai pegar e fazer um array basicamente
+
+usando for
+
+function soma(...valores){
+     let tam = valores.lenght    -rest junta os valores do console.log o valores.lenght ve a quantidade, depois o for a cada volta o i 
+     let res = 0                  vira uma posição de array e depois o res+= incrementa os elementos dentro do array a cada posição,
+     for(let i=0;i<tam;i++){      sem o nome do array ele so soma as posicoes
+         res+=valores[i]
+     }
+
+console.log(soma(10,2,3,4,5))
+
+
+
+usndo for of
+
+
+function soma(...valores){  
+     let res = 0                 
+     for(let v of valores){ 
+        res+= v
+
+já pega o elemento e soma e não aa posição igual o for tradicional a cima
+
+
+o for in verei dps
+
+
+
