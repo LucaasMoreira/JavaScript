@@ -1,0 +1,44 @@
+aula37 parando propagação do evento
+
+oque ele faz, basicamente ele pra de propagar o evento nos filhos e so vai nele, ex
+
+se eu tiver um div com filhos e eu colocar evento de click na div os filhos vao pegar este evento tbm então para resolver isso nos usa
+
+
+stopPropagation()
+
+
+
+so que nos usa no filho e no no pai,
+
+
+
+const caixa1=document.querySelector("#caixa1")
+const btn_c1=document.querySelector("#c1")
+
+caixa1.addEventListener("click",(evt)=>{
+    console.log("clicou")
+})
+
+btn_c1.addEventListener("click",(evt)=>{              -    quando for clicado o 'evt(parâmetro do evento)' esta falando que n é pra mostra
+    evt.stopPropagation()                                  o evt ou etc
+})                                                          detalhe:  quando uso evt ele pega tudo do addeventlistener no console'
+
+
+
+
+agr vamos fazer em todos é simples
+
+const caixa1=document.querySelector("#caixa1")
+const btn_c1=document.querySelector("#c1")
+const cursos=[...document.querySelectorAll(".curso")]
+
+caixa1.addEventListener("click",(evt)=>{
+    console.log("clicou")
+})
+
+cursos.map((el)=>{
+    el.addEventListener("click",(evt)=>{
+        evt.stopPropagation()
+    })
+})

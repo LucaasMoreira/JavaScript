@@ -1,0 +1,46 @@
+aula38 entendendo a relação dos elementos doom
+
+melhor ver o vídeo da aula 38, mas vou colocar importantes aqui
+
+diferenciar o
+
+childnodes - ele pega os filhos e os elementos dele
+
+children - ele pega só os filhos e n os elementos
+
+mas também tem o 
+
+parente
+
+sibling e etc de relações 
+
+mas como nos coloca na script ou seja identificar
+é fácil, vamos começar 
+
+
+console.log(caixa1.children[]) - filho elemento,  se quiser posso identificar
+dicas : quando for propriedade n precisa de ()
+
+
+outra maneira de especifica é usando  a propriedade lenght que retorna a quantidade
+
+console.log(caixa1.children[caixa1.children.lenght-1])   -  eu diminuo pra 5 pq começa do zero o array pq ele conta 6
+
+
+ou tbm
+
+console.log(caixa1.firstElementChild)
+console.log(caixa1.lastElementChild)
+
+
+agora vamos pegar o no raiz
+
+console.log(document.getrootnode()) 
+
+e o
+
+console.log(document.ownerDocument())
+console.log(caixa1[0].ownerDocument())  -  vai da no mesmo agr, mas posso pegar o no raiz tbm a parti de um array que eu quero ou elementos
+
+
+

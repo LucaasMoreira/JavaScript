@@ -8,11 +8,11 @@ começando com
 classList.  -   envez de nos usar add() ou remove()  nos vai usar 'toggle'
 classList.toggle()  - faz com que eu posso tanto add quanto remover
 
-depois que fzer para quando clicar so oque você quer e a metade da questão do botão que retorna apens a classe referida
+depois que fAzer para quando clicar so oque você quer e a metade da questão do botão que retorna apena a classe referida
 nos vai aprender um novo método
 
 ex:
 
-curso.appendChild(el)    -  vai anexar um filho ao elemento caixa 2(div pai)
+curso2.appendChild(el)    -  vai anexar um filho ao elemento caixa 2(div pai)
 
 qual filho o el - elemento do map que eu basicamente tenho os elementos que peguei ao eu pegar  add

@@ -1,0 +1,13 @@
+aula 36 - praticando eventos pt2
+
+para nos quiser transferir pra caixa 1 - nos temos que criar ex, uma variável não .destacado
+
+ex:
+
+const Naoselecionado = document.QuerySelectorAll(:not(.destque)) 
+
+o querySelector tem uma função que ex: eu vou listar alguém que não possua a classe .destaque
+
+mas nisso ele pega tudo que n possue a classe, então para isso nos tem que limitar pesquisa
+
+const Naoselecionado = document.QuerySelectorAll(.curso :not(.destaque)) 
