@@ -1,0 +1,69 @@
+aula39 entendendo a relação dos elementos doom
+melhor ver o vídeo da aula 39, mas vou colocar importantes aqui
+
+existe um método pra saber se o elemento tem filho ou não
+
+
+este método é
+
+console.log(curso1.hasChildNodes())   -retorna verdadeiro se o elemento ter filho
+
+claro que vamos dizer que o exemplo de cima é só do child o 'has' vamos dizer tem outros modos
+
+parente e sibling
+
+
+também vale lembrar que o hasChildNodes()  ele vai dizer tbm tudo ou seja caso coloque um elemento pensando que vai da false pq
+so tem ele, vale ressaltear que o hasChildNodes() conta o 'text'
+
+então pra ver se so tem o elemento
+
+uma das opções é usando o comparador if
+
+
+'aqui há 2 variaveis' - simulando pra o exemplo de baixo
+
+---caixa1
+
+---btn
+
+if(caixa1.children.lenght > 0){
+console.log('maior')
+}else[
+console.log('menor')
+}
+
+
+para facilitar nos pode usar uma condição ternaria
+
+console.log(btn[0].children.lenght > 0 ? 'POSSUI' : 'NAO POSUI')   aqui mesmo vai da a 2 opção
+
+
+
+
+agora vamos operar pra entender, exemplo:
+
+console.log(caixa1.children[1].innerHtml = 'teste')
+
+ou especificar
+
+console.log(caixa1.firstelementchild.innerHtml = 'teste')
+
+outro caso é que se eu tiver numa situação que o elemento esta em uma div que ta alinhada em 2 divs anterior
+e eu quero pegar é fácil
+so criar uma variável e usa query ou get pra pegar id ou class
+
+ai vamos supor que eu queira saber o pai dela que seria a div pai
+
+so usar o 
+console.log(caixa1.parentNode)
+
+agora queremos saber o avo
+é fácil so usar o parentNode tbm
+
+console.log(caixa1.parentNode.parentNode)
+
+como nos ta no avo nos pode puxar io filho dele, olha que legal so usar o children
+
+console.log(caixa1.parentNode.parentNode.children[3])
+
