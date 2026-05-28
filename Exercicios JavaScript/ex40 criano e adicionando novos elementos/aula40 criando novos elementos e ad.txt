@@ -1,0 +1,78 @@
+aula40 criando novos elementos e add no dom em js
+
+para nos criar e adicionar elemento nos vamos utilizar ó ' createElement '
+
+ou seja:
+const novoEle = document.createElement()  -  ele precisa saber qual elemento ele vai criar, para isso nos vamos usar o ex com 'div'
+
+const novoEle = document.createElement('div')
+a parti daqui eu já tenho o novo elemento so que ele esta na memoria, ou seja ele n foi anexado a nossa pagina
+
+e eu tenho que informa onde eu quero anexa este elemento
+
+vamos supor que eu quero que ele se agrupa no elemento caixa, ex:
+
+const caixa1 = docum..........
+const novoEle = document.createElement('div')
+
+e nos vai usar um método que nos já usamos que é o 'appendChild'  - anexar filho
+
+caixa1.appendChild(novoEle)   -  anexei a constante 
+
+
+e como que eu vou trabalhar com esta div, vamos la
+vamos supor que eu quero adicionar um texto, é bem fácil
+
+const caixa1 = docum..........
+const novoEle = document.createElement('div')
+
+novoEle.innerHTML = 'php'
+
+caixa1.appendChild(novoEle)
+
+
+mas eu quero coloca propriedades nele que pode ser 'id' , 'class' e  etc
+então:
+
+nos usa um método novo por agr que é 'setAttribute'
+
+novoEle.setAttribute('','')   -  primeiro eu falo o atributo e depois o valor
+
+adicionando id e class
+novoEle.setAttribute('id','c7')
+novoEle.setAttribute('class','curso c1')
+
+
+agora vamos pegar todos os cursos e adicionar dinamicamente no meu contêiner caixa1
+pra isso vou criar um array dos curso
+
+const cursos=['html','css','php','js']
+
+e vamos percorrer, normal ate aqui
+
+const cursos=['html','css','php','js']
+
+curso.map((el)=>{         -         para cada elemento do map oque eu vou fazer
+const novoEle = document.createElement('div')   -   vou criar um novo elemento div
+novoEle.setAttribute('id','c7')               
+novoEle.setAttribute('class','curso c1')        - adicionar id e class
+caixa1.appendChild(novoEle)                     - anexar na caixa1
+})
+
+
+só que vai ter um problema, todos os elementos vai ter o mesmo  #id
+então vamos resolver
+
+lembrando que o map tbm nos tem a chave(posição dos elementos) dele
+que seria map(el,chave)
+
+então eu posso pegar a própria chave para complementar meu id
+
+curso.map((el,chave)=>{})
+
+
+novoEle.setAttribute('id','c' + chave)    -   nos so muda esta parte
+
+se quisermos começar com 1 e não 0, so adicionar
+
+novoEle.setAttribute('id','c' + chave+1) 
