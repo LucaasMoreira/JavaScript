@@ -1,0 +1,60 @@
+aula41  removendo elementos do dom com 'removeChild'
+
+existem varias maneira pra remover elementos do dom e depende da maneira que eu quero
+um exemplo seria
+
+eliminar do array e pedi pra criar os elementos da ciaxa1
+mas existe maneiras pra isso
+
+vamos começar uma maneira que é
+quando for clicado no elemento ele vai ser removido
+lição:
+
+vamos saber se ta funcionando
+
+novoEle.addEventListener('click',(evt)=>{
+console.log(evt.target)
+})
+
+
+eu nao preciso usar stoppropagation pq os elementos vao de baixo para a cima entao n volta  -  pai e filhos
+mas caso tenha filhos no elemento que nos queira pode dar poblema
+
+vamos remover filho
+
+novoEle.addEventListener('click',(evt)=>{
+caixa1.removeChild(evt.target)
+
+ou seja quando for cricado o parametrodo evento vai identificar o elemento e em seguida vai ser removido
+
+
+vamos dificultar agora a nossa experiencia
+liçao:
+
+criaremos um elemento
+
+btn = documento.creatElement("img")
+btn.setAttribute("src", './img.lixeira')     -    coloquei uma img fantasma so pra exemplo
+novoele.appendChild('btn')
+
+
+
+após isso só fazer umas configurações na imagem no css e ok
+
+agora nos quer que remove o elemento só quando clicar na lixeira
+vamos lá
+
+então nos tem que fazer uma mudança básica que é, nos temos que remover quando for clicado na lixeira agora
+e não no elemento, então seria
+
+
+mas quando organiza e aperta na lixeira vai da erro, pq agora o pai é c1 ou seja o filho e não o pai que era caixa1
+
+btn = documento.creatElement("img")
+btn.setAttribute("src", './img.lixeira')
+btn.addEventListener('click',(evt)=>{
+caixa1.RemoveChild(evt.target.parentNode)
+}
+novoele.appendChild('btn')
+
+
