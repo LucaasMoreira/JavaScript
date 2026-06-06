@@ -1,0 +1,132 @@
+aula43 pratica com método filter
+
+melhor pa entender , ver aula 43 cbf js
+mas vou fala algumas coisas aqui
+
+
+vamos criar um botso que pega o curso que eu selecionei
+
+
+como eu vou pegar so o radio que estive check(marcado)
+
+
+btn.addeventlistener('click',(evt)=>{
+ const lista = [...document.queryselectorall('input[type = radio]')]   - primeiro eu vou fazer uma lista que pega todos input do tipo radio
+                                                                         ele vai estar em nodeList então transforma em array usando spread
+ const check = lista.filter((el,in,arr)=>{
+ return el.checked                                                     - retorna o elemento que tiver check após o filter ver
+})
+})
+
+
+
+
+eu quero pega somente um camarada, como posso facilitar a vida
+
+
+btn.addeventlistener('click',(evt)=>{
+ let lista = [...document.queryselectorall('input[type = radio]')]   -  mudei pra let
+
+
+ lista = lista[0]        -  a variável recebe ela mesmo somente na posição 0, agora n tenho coleção somente o radio selecionado html puro
+ const parente = lista.parentNode.parentNode.firstchild    -  pega o pai primeiro e depois o pai do pai ou seja o avo e o filho
+
+ const check = lista.filter((el,in,arr)=>{
+ return el.checked                                                   
+})
+})
+
+
+
+agora tem um porem
+
+const parente = lista.parentNode.parentNode.firstchild
+
+quando eu fazer isso vai pegar o objectText e não é isso que eu quero
+então pra mudar pra javascript so usar 'textContent'  -  conteúdo de texto
+
+const parente = lista.parentNode.parentNode.firstchild.textContent
+
+
+outro jeito é pegar o irmão (sibling)
+
+
+const parente = lista.parentNode.parentNode.previousSibling.textContent  -  vai pegar o irmão anterior da div que esta ele e o irmão, e
+                                                                            usar o textContent
+
+
+
+para ver uma script  mais atualizada e explicativa ver o código e este complemento
+
+
+
+=======================================================================
+GUIA DE ESTUDO JAVASCRIPT - AULA 43 (MANIPULACAO DO DOM E FILTER)
+O objetivo do codigo eh: olhar todos os radios da tela, descobrir
+qual esta marcado, pegar esse elemento e extrair o texto dele.
+
+O JavaScript executa o codigo de cima para baixo, linha por linha,
+seguindo a sequencia abaixo:
+
+PASSO 1: Pegando os dados da tela (A NodeList)
+Comando do curso:
+document.querySelectorAll("input[type=radio]")
+
+O que acontece: O navegador captura todas as bolinhas de radio.
+
+O formato disso: Ele devolve uma NodeList (No de Lista).
+
+O problema: A NodeList eh travada. Ela so aceita o metodo .forEach().
+Se tentar usar o .filter() direto nela, o JavaScript da erro.
+
+PASSO 2: A Transformacao (Virando um Array)
+Comando do curso:
+const todosRadios = [...document.querySelectorAll("input[type=radio]")];
+
+O que acontece: O uso dos colchetes e dos tres pontinhos [...]
+(Operador Spread) pega a NodeList e a transforma em um ARRAY PURO.
+
+Por que fazemos isso? Porque o Array eh o unico que tem o poder
+de usar o metodo .filter() e o .map().
+
+PASSO 3: O Filtro (Achando o radio marcado)
+Comando do curso:
+let radioSelecionado = todosRadios.filter((el) => { return el.checked; });
+
+O que acontece: O .filter() varre o seu Array e testa um por um.
+
+Como ele ainda eh um Array, o .filter() funciona perfeitamente aqui.
+
+O resultado: Ele gera um NOVO ARRAY guardando quem estava marcado.
+O resultado sai dentro de colchetes, tipo: [ input ]
+
+PASSO 4: A Extracao (Saindo de dentro do Array)
+Comando do curso:
+radioSelecionado = radioSelecionado[0];
+
+O que acontece: Voce diz para o codigo pegar o elemento que esta na
+posicao zero e tira-lo de dentro do Array.
+
+A VIRADA DE CHAVE: A partir dessa linha, a variavel DEIXA DE SER UM ARRAY
+e se transforma em um ELEMENTO HTML PURO (a tag input livre).
+
+Por que funciona? Porque o .filter() ja rodou la em cima NO PASSO 2.
+Como voce ja filtrou, voce nao precisa mais do Array, so do elemento puro.
+
+PASSO 5: O Destino Final (Navegando no Elemento HTML)
+Comando do curso:
+const cursoTexto = radioSelecionado.parentNode.textContent;
+
+O que acontece: Como a variavel agora eh um Elemento HTML Puro, voce
+pode usar as propriedades nativas dele para controlar a tela:
+
+.parentNode -> Sobe um degrau no HTML ate a div pai do input.
+
+.textContent -> Arranca o texto que esta escrito dentro dessa div.
+
+=======================================================================
+REGRA DE OURO PARA LEMBRAR:
+O .filter() e o .map() sao ferramentas exclusivas de ARRAY.
+Voce usa o Array primeiro para filtrar (Passo 2 e 3). Depois que achou,
+voce usa o [0] para destruir o Array (Passo 4) e ficar so com o
+elemento HTML puro para pegar o texto (Passo 5).

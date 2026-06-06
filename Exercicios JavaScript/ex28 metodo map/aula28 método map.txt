@@ -33,7 +33,7 @@ curso.map((el,i)=>{
 
 
 
-eu posso usar o for só que quando quero parar em algum lugar e etc.
+eu posso usar o 'for' só que quando quero parar em algum lugar e etc.
 
 já o map é bom pq ele percorre tudo retorna tudo sem interrupções
 

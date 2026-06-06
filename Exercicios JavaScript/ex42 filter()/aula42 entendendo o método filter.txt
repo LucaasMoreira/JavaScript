@@ -1,0 +1,61 @@
+aula42 entendendo o método filter
+
+oque é: ele percorre um array e ele me permite que realizo uma filtragem através de uma programação e que me retorna somente 
+determinados elementos deste array
+
+
+ou seja eu tenho um array e quero que ele retorna outro array com base do que eu quero
+exemplos:
+
+const idades = [12,30,20,34,54,23,44,12]
+
+temos um array e eu quero retorna este array somente com idades maior ou igual a 18 anos
+
+const idades = [12,30,20,34,54,23,44,12]
+const maior = idades.filter()                       -  eu vou falar que ela vai receber o resultado da minha filtragem
+
+
+agora como eu posso utilizar o filter()
+eu posso criar uma função dentro dele que opera os elementos do filter separado
+
+vamos la
+
+
+const idades = [12,30,20,34,54,23,44,12]
+const maior = idades.filter(maiorde18)                       -  eu vou falar que ela vai receber o resultado da minha filtragem
+
+const maiorde18 = (valor)=>{
+ if valor >= 18
+ return valor
+}
+
+
+console.log(maior)
+ vai da erro pq nos tem que colocar a função primeiro em vez das constantes
+
+deste jeito:
+
+
+
+
+const maiorde18 = (valor)=>{
+ if (valor >= 18)
+ return valor
+}
+
+
+const idades = [12,30,20,34,54,23,44,12]
+const maior = idades.filter(maiorde18)
+
+
+gora como posso reduzir o código
+so usar função anônima
+
+
+
+const maior = idades.filter((valor)=>{
+ if (valor >= 18)
+ return valor
+)
+
+

@@ -1,0 +1,129 @@
+aula44  removendo elemento dom - função remove()
+
+
+pra remover é quase a mesma coisa do botão lá do site que verifica o curso que foi selecionado e mostra no alert
+só que pega uma parte deste código para poder usar remove()
+
+
+nos cria uma const  pega
+o código que esta lá, só que nesta parte
+
+ lista = lista[0] nos muda pra
+
+return lista[0] 
+
+e depois na função do botão
+nos cria uma const do 'rs' que recebe a const em cima que nos criou do radio selecionado
+ficando assim
+
+
+
+
+
+
+const radioSelecionado=()=>{
+    const todosRadios=[...document.querySelectorAll("input[type=radio]")]
+    const radioSelecionado=todosRadios.filter((ele,ind,arr)=>{
+        return ele.checked
+    })
+    return radioSelecionado[0]
+}
+
+btnCursoSelecionado.addEventListener("click",(evt)=>{
+    const rs=radioSelecionado()
+    const cursoSelecionado=rs.parentNode.previousSibling.textContent
+    alert("Curso selecionado: " + cursoSelecionado)
+})
+
+
+agora eu consigo sempre que precisar o radio selecionado
+
+agora vamos fazer o remove()
+para removerr nos muda e add algumas coisas
+
+
+btnRemover.addEventListener("click",(evt)=>{
+    const rs=radioSelecionado()
+    const cursoSelecionado=rs.parentNode.ParentNode  -   nos esta pegando a div e não o irmão próximo agr
+    cursoSelecionado.Remove()   -  pos vereficar a div vai ser removido o curso
+
+
+
+quando nos n seleciona o curso e peta algum botão vai da erro de que n encontrou o elemento, pra resolver isso nos vai fazer o seguinte
+como o const rs=radioSelecionado()  n ta retornando nos faz o seguinte
+
+
+
+
+
+
+btnCursoSelecionado.addEventListener("click",(evt)=>{
+    const rs=radioSelecionado()
+    console.log(rs)
+    if(rs!=undefined){            
+        const cursoSelecionado=rs.parentNode.previousSibling.textContent
+        alert("Curso selecionado: " + cursoSelecionado)
+    }else{
+        alert("Selecione um curso")
+    }
+})
+
+
+ se o rs for diferente de undefined nos imprime o curso, se n cai no else
+fazemos a mesma coisa no botão de remove()
+
+
+
+
+
+
+
+
+
+
+
+aqui esta o resumo de hoje do que aprendi
+
+
+===================================================================
+MEUS APRENDIZADOS - JAVASCRIPT (MANIPULAÇÃO DE DOM E FILTROS)
+===================================================================
+
+1. RETORNO DE FUNÇÕES (Mecânica dos dois Returns):
+   - O primeiro "return" (dentro do .filter) é booleano (true/false). Ele serve apenas para o motor do filter saber se guarda ou joga fora o elemento.
+   - O segundo "return" (no final da função) é o que ejeta o dado para fora. É ele que entrega o elemento HTML destravado (ou undefined) para a variável do botão.
+   - Diferença de performance: Usar "return radioSelecionado[0]" direto corta caminhos na memória do computador, economizando linhas de atribuição.
+
+2. FLUXO DE EXECUÇÃO (Como o botão sabe quem foi clicado):
+   - O botão sozinho é "cego". Ele não guarda o valor do rádio em tempo real.
+   - A função "radioSelecionado" só acorda e roda no exato milissegundo em que o botão é clicado.
+   - Ao ser chamada pelo clique do botão, a função faz uma varredura instantânea na tela para ver qual rádio está ativo.
+
+3. TRATAMENTO DE ERROS E SEGURANÇA COM IF/ELSE:
+   - Se o botão for clicado sem nenhum curso selecionado, o filter gera um array vazio [], e tentar ler a posição [0] resulta em "undefined".
+   - Tentar ler propriedades (como .parentNode) de algo que é "undefined" quebra o código e gera o erro vermelho no console do navegador.
+   - O "if (rs != undefined)" funciona como um desvio de segurança. Se for undefined, o JavaScript ignora a linha que daria erro e pula direto para o "else", limpando o erro do console.
+
+4. LOGICA DE NAVEGAÇÃO: TARGET vs FILTER:
+   - O "evt.target" serve para descobrir quem recebeu o clique direto naquele instante (ex: o próprio botão). Ele não serve para ler outros elementos longe dele.
+   - O "filter + .checked" serve para fazer uma varredura geral na página e descobrir quem está ativo no HTML, não importando onde o usuário clicou.
+
+5. COMPORTAMENTO DO RÁDIO BUTTON NO FILTER:
+   - Se por um erro de lógica houvesse dois rádios marcados, o código pegaria apenas o primeiro, porque o "return [0]" está travado para resgatar sempre a primeira posição.
+   - No rádio button isso não quebra o sistema porque a propriedade HTML "name" garante que apenas um rádio fique marcado por vez.
+===================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+   VEREFICAR DEPOIS O CODIGO PRA ESTUDO
+
+
