@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 43 - Prática com o método Filter</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .caixa {
+            border: 4px solid #000;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+        }
+
+        .curso {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .curso input {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .btn {
+            background-color: #00f;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #008;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <div class="caixa">
+            <div class="curso">
+                <input type="radio" name="rb_curso" id="c1">
+                <label for="c1">HTML</label>
+            </div>
+            <div class="curso">
+                <input type="radio" name="rb_curso" id="c2">
+                <label for="c2">CSS</label>
+            </div>
+            <div class="curso">
+                <input type="radio" name="rb_curso" id="c3">
+                <label for="c3">JavaScript</label>
+            </div>
+            <div class="curso">
+                <input type="radio" name="rb_curso" id="c4">
+                <label for="c4">PHP</label>
+            </div>
+            <div class="curso">
+                <input type="radio" name="rb_curso" id="c5">
+                <label for="c5">React</label>
+            </div>
+            <div class="curso">
+                <input type="radio" name="rb_curso" id="c6">
+                <label for="c6">MySQL</label>
+            </div>
+            
+            <button id="btnCursoSelecionado" class="btn">Curso Selecionado</button>
+            <button id="btnRemove" class="btn">remover</button>
+        </div>
+    </main>
+
+    <script src="aula44.js">
+    </script>
+
+</body>
+</html>

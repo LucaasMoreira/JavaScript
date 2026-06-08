@@ -1,0 +1,94 @@
+aula45  criando elementos antes e depois de outros elementos
+
+continuando	 o código da aula anterior
+
+vamos começar criando uma função pra mudar o curso
+
+nos precisa cria um variável com índice 0 e depois uma const com função anônima
+
+
+esta variável const se responsabiliza de criar os curso
+
+
+
+colocar os códigos e estudar
+
+
+agora vamos aprender a como colocar os curso
+
+btnantes.addeventlistener('click', ()=>{
+
+})
+
+
+para funcionar
+1 ele tem que verificar o curso selecionado
+e adicionar o curso selecionado antes dele
+
+nos já tem
+
+
+btnantes.addeventlistener('click', ()=>{
+const rs=radioSelecionado()
+    console.log(rs)
+    if(rs!=undefined){            
+        const cursoSelecionado=rs.parentNode.parentNode
+        alert("Curso selecionado: " + cursoSelecionado)
+
+})
+
+
+
+nos temos funções pra inserir o texto em algum lugar,vamos começar o que nos ta agr o 'antes'
+
+onde eu quero inserir os curso, claro que vai ser na 'caixacursos'   -  seria um const invisível só pra da exemplo que pega caixa principal onde coloca os curso 
+
+
+
+btnantes.addeventlistener('click', ()=>{
+const rs=radioSelecionado()
+    console.log(rs)
+    if(rs!=undefined){            
+        const cursoSelecionado=rs.parentNode.parentNode
+        caixacursos.insertbefore()
+
+
+mas antes de continuar nos precisa criar um novo curso, que nos já tem la em cima
+
+
+
+const cursoSelecionado=rs.parentNode.parentNode
+const novoelemento = criarNovoCurso(NovoCurso.value)   -  precisamos o nome do curso
+  caixacursos.insertbefore(novoCurso,cursoSelecionado )    - 1 vou ta dzendo pra colocar o elemento(novoCurso)  antes do cursoselecionado
+                                                             que seria a identificaçao do radio que foi selecionado
+
+
+nao tem pra colocar depois, entao como nos vai fazer, simples fazer insertBefore so que no proximo irmao
+
+const cursoSelecionado=rs.parentNode.parentNode
+const novoelemento = criarNovoCurso(NovoCurso.value)   -  
+  caixacursos.insertbefore(novoCurso,cursoSelecionado.NextSibling )
+
+
+
+
+agora vamos tratar pra n criar m curso vazio, colocar o if para vereficar
+todo o codigo aqui em baixo ajeitado
+
+btnantes.addeventlistener('click', ()=>{
+const rs=radioSelecionado()
+    console.log(rs)
+    if(rs!=undefined){            
+        if(NovoCurso.value != ''){
+        const cursoSelecionado=rs.parentNode.parentNode
+        const novoelemento = criarNovoCurso(NovoCurso.value)   -  
+        caixacursos.insertbefore(novoCurso,cursoSelecionado.NextSibling )    - depende se for antes ou depois muda aqui
+
+}else{
+ alert('digite o nome do curso')
+}
+
+
+
+
+

@@ -1,0 +1,292 @@
+aula45  mais detalhado a explicação do código
+
+
+código a abaixo e depois os detalhes
+
+// ==========================================
+// 1. MAPEAMENTO DOS ELEMENTOS DO DOM
+// ==========================================
+const caixaCursos = document.querySelector("#caixaCursos");
+const btn_cursoSelecionado = document.querySelector("#btn_cursoSelecionado");
+const btn_removerCurso = document.querySelector("#btn_removerCurso");
+const btn_antes = document.querySelector("#btn_antes");
+const btn_depois = document.querySelector("#btn_depois");
+const nomeCurso = document.querySelector("#nomeCurso"); // O campo de texto (input)
+
+let indice = 0; // Contador para dar IDs únicos para cada curso criado
+
+// ==========================================
+// 2. FUNÇÃO QUE RETORNA O CURSO SELECIONADO (O FILTER)
+// ==========================================
+const radioSelecionado = () => {
+    const todosRadios = [...document.querySelectorAll("input[type=radio]")];
+    const selecionado = todosRadios.filter((el) => {
+        return el.checked;
+    });
+    return selecionado[0]; // Retorna o primeiro rádio marcado (ou undefined)
+};
+
+// ==========================================
+// 3. A FÁBRICA DE ELEMENTOS (Cria, configura e retorna o nó)
+// ==========================================
+const criarNovoCurso = (curso) => {
+    // Cria a div container do curso
+    const novoElemento = document.createElement("div");
+    novoElemento.setAttribute("id", "c" + indice);
+    novoElemento.setAttribute("class", "curso c1");
+
+    // Cria o input do tipo radio
+    const rb = document.createElement("input");
+    rb.setAttribute("type", "radio");
+    rb.setAttribute("name", "rb_curso"); // Mesmo name para funcionarem juntos
+
+    // Monta a estrutura colocando o rádio e o texto dentro da div
+    novoElemento.appendChild(rb);
+    
+    // Adiciona o texto que veio do parâmetro da função
+    const textoCurso = document.createTextNode(curso);
+    novoElemento.appendChild(textoCurso);
+
+    indice++; // Aumenta o contador para o próximo ID ser diferente
+    return novoElemento; // RETORNA a div prontinha com tudo dentro
+};
+
+// ==========================================
+// 4. EVENTOS DOS BOTÕES (ANTES / DEPOIS)
+// ==========================================
+
+// Botão Adicionar Antes
+btn_antes.addEventListener("click", () => {
+    const rs = radioSelecionado(); // 1. Verifica qual está selecionado
+    
+    if (nomeCurso.value !== "") {  // 2. Verifica se o input não está vazio
+        if (rs !== undefined) {
+            const cursoSelecionado = rs.parentNode; // Pega a div pai do rádio
+            
+            // 3. Chama a fábrica passando o que você digitou no input
+            const novoCurso = criarNovoCurso(nomeCurso.value);
+            
+            // 4. Insere antes do curso selecionado
+            caixaCursos.insertBefore(novoCurso, cursoSelecionado);
+        } else {
+            alert("Selecione um curso!");
+        }
+    } else {
+        alert("Digite o nome do curso!");
+    }
+});
+
+// Botão Adicionar Depois
+btn_depois.addEventListener("click", () => {
+    const rs = radioSelecionado();
+    
+    if (nomeCurso.value !== "") {
+        if (rs !== undefined) {
+            const cursoSelecionado = rs.parentNode;
+            const novoCurso = criarNovoCurso(nomeCurso.value);
+            
+            // Como o DOM não tem um "insertAfter", usamos o after() moderno
+            cursoSelecionado.after(novoCurso);
+        } else {
+            alert("Selecione um curso!");
+        }
+    } else {
+        alert("Digite o nome do curso!");
+    }
+});
+
+// Botão Curso Selecionado
+btn_cursoSelecionado.addEventListener("click", () => {
+    const rs = radioSelecionado();
+    if (rs !== undefined) {
+        // Pega o nó pai (a div) e lê o texto dela
+        const cursoTexto = rs.parentNode.textContent;
+        alert("Curso selecionado: " + cursoTexto);
+    } else {
+        alert("Selecione um curso!");
+    }
+});
+
+// Botão Remover
+btn_removerCurso.addEventListener("click", () => {
+    const rs = radioSelecionado();
+    if (rs !== undefined) {
+        const cursoSelecionado = rs.parentNode;
+        cursoSelecionado.remove(); // Remove a div inteira da tela
+    } else {
+        alert("Selecione um curso!");
+    }
+});
+
+
+
+
+explicações
+
+
+1. Mapeamento dos Elementos (As Variáveis Globais)
+
+
+const caixaCursos = document.querySelector("#caixaCursos");
+const btn_cursoSelecionado = document.querySelector("#btn_cursoSelecionado");
+const btn_removerCurso = document.querySelector("#btn_removerCurso");
+const btn_antes = document.querySelector("#btn_antes");
+const btn_depois = document.querySelector("#btn_depois");
+const nomeCurso = document.querySelector("#nomeCurso");
+let indice = 0;
+
+
+
+O que faz: Cria "pontes" entre o HTML e o JavaScript. Em vez do JavaScript ter que ir ao HTML toda hora procurar onde está o botão ou a caixa de texto, ele guarda essas referências nessas constantes logo no início do arquivo.
+
+O let indice = 0: É uma variável de contagem. Toda vez que criarmos um curso novo, usamos esse número para gerar um ID diferente (ex: c0, c1, c2). Isso impede que dois elementos tenham o mesmo ID na página.
+
+
+
+2. A Função de Filtragem (radioSelecionado)
+
+
+
+const radioSelecionado = () => {
+    const todosRadios = [...document.querySelectorAll("input[type=radio]")];
+    const selecionado = todosRadios.filter((el) => {
+        return el.checked;
+    });
+    return selecionado[0];
+};
+
+
+O que faz: Ela varre a tela procurando qual curso o usuário marcou.
+
+Passo a passo interno:
+
+O querySelectorAll pega todos os inputs de rádio da tela. O operador [...] transforma essa lista em um Array real.
+
+O .filter() percorre rádio por rádio e checa a propriedade .checked (que diz se o rádio está marcado com a bolinha azul ou não).
+
+O rádio que estiver marcado é colocado dentro do novo array selecionado.
+
+A função retorna selecionado[0], que significa: "Me dê o primeiro (e único) rádio que você encontrou marcado". Se nenhum rádio estiver marcado, ela retorna undefined.
+
+
+
+3. A Fábrica de Cursos (criarNovoCurso)
+
+
+// 1. Variável global do índice (o placar geral)
+let indice = 0;
+
+// 2. A função que serve de MOLDE para criar os cursos
+const criarNovoCurso = (curso) => {
+    const novoElemento = document.createElement("div");
+    novoElemento.setAttribute("id", "c" + indice); // Usa o número atual do índice
+    novoElemento.setAttribute("class", "curso c1");
+    
+    novoElemento.innerHTML = curso; 
+
+    const comandos = document.createElement("div");
+    comandos.setAttribute("class", "comandos");
+
+    const rb = document.createElement("input");
+    rb.setAttribute("type", "radio");
+    rb.setAttribute("name", "rb_curso");
+
+    comandos.appendChild(rb);
+    novoElemento.appendChild(comandos);
+
+    return novoElemento; // Retorna a div pronta
+};
+
+// 3. O MAP que roda no início para os cursos padrões
+cursos.map((el, chave) => {
+    const novoElemento = criarNovoCurso(el); 
+    caixaCursos.appendChild(novoElemento);   
+    indice++; // Aumenta o índice para os cursos iniciais
+});
+
+
+O que faz: Essa função é um "molde" ou uma fábrica. Ela não coloca nada na tela ainda; ela apenas monta a estrutura de um curso na memória do computador e te entrega o pacote pronto.
+
+Passo a passo interno:
+
+document.createElement("div"): Cria uma tag <div> vazia na memória.
+
+setAttribute: Adiciona o ID único (usando o indice) e as classes CSS (curso c1) nessa div para ela ficar bonita.
+
+createElement("input") e seus setAttribute: Cria a bolinha de rádio e garante que ela tenha o type="radio" e o name="rb_curso". (Lembra que rádios com o mesmo name trabalham juntos? Se você marca um, o outro desmarca).
+
+comandos.appendChild(rb)    -  coloca o imput já formado e estilizad
+
+novoElemento.appendChild(comandos): Coloca o rádio que acabamos de criar dentro da nossa div.
+
+
+return novoElemento: Cospe a div montada (com rádio e texto dentro) para quem chamou a função.
+
+
+cursos.map  -  ta aqui so pra colocarrr os arrays que já estavam no javaScript armazenado
+
+
+
+precisa atualizar algumas palavras, mas esta certo a logica conforme foi feita no vídeo e estudada
+
+
+
+
+4. O Botão Adicionar Antes (btn_antes)
+
+
+
+btn_antes.addEventListener("click", () => {
+    const rs = radioSelecionado();
+    if (nomeCurso.value !== "") {
+        if (rs !== undefined) {
+            const cursoSelecionado = rs.parentNode;
+            const novoCurso = criarNovoCurso(nomeCurso.value);
+            caixaCursos.insertBefore(novoCurso, cursoSelecionado);
+        } else { alert("Selecione um curso!"); }
+    } else { alert("Digite o nome do curso!"); }
+});
+
+
+O que faz: Quando clicado, insere o curso digitado antes do curso marcado.
+
+Passo a passo interno:
+
+Chama radioSelecionado() para ver quem está marcado e guarda na variável rs.
+
+Verifica se a caixinha de texto (nomeCurso.value) não está vazia.
+
+Verifica se rs não é undefined (ou seja, se o usuário realmente selecionou algum rádio).
+
+rs.parentNode: Como rs é o rádio, o .parentNode pega o elemento pai dele, que é a div inteira do curso. Precisamos da div inteira como referência.
+
+criarNovoCurso(nomeCurso.value): Envia o texto digitado para a fábrica e guarda a div novinha retornada na variável novoCurso.
+
+caixaCursos.insertBefore(novoCurso, cursoSelecionado): O elemento pai de todos (caixaCursos) executa o comando de inserir o novoCurso exatamente antes do cursoSelecionado.
+
+
+
+o depois mesma coisa deste 4 agora só muda algumas coisinhas
+
+
+
+
+dica, o professor esqueceu de atualizar o índice
+o certo seria coloca indice++ no criarNovoCurso ou no botao 
+
+
+estudar dps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
