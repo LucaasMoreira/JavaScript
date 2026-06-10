@@ -29,27 +29,38 @@ const radioSelecionado = () => {
 // ==========================================
 // 3. A FÁBRICA DE ELEMENTOS (Cria, configura e retorna o nó)
 // ==========================================
-const criarNovoCurso = (curso) => {
-    // Cria a div container do curso
-    const novoElemento = document.createElement("div");
-    novoElemento.setAttribute("id", "c" + indice);
-    novoElemento.setAttribute("class", "curso c1");
+// 1. Variável global do índice (o placar geral)
+let indice = 0;
 
-    // Cria o input do tipo radio
+// 2. A função que serve de MOLDE para criar os cursos
+const criarNovoCurso = (curso) => {
+    const novoElemento = document.createElement("div");
+    novoElemento.setAttribute("id", "c" + indice); // Usa o número atual do índice
+    novoElemento.setAttribute("class", "curso c1");
+    
+    novoElemento.innerHTML = curso; 
+
+    const comandos = document.createElement("div");
+    comandos.setAttribute("class", "comandos");
+
     const rb = document.createElement("input");
     rb.setAttribute("type", "radio");
-    rb.setAttribute("name", "rb_curso"); // Mesmo name para funcionarem juntos
+    rb.setAttribute("name", "rb_curso");
 
-    // Monta a estrutura colocando o rádio e o texto dentro da div
-    novoElemento.appendChild(rb);
-    
-    // Adiciona o texto que veio do parâmetro da função
-    const textoCurso = document.createTextNode(curso);
-    novoElemento.appendChild(textoCurso);
+    comandos.appendChild(rb);
+    novoElemento.appendChild(comandos);
 
-    indice++; // Aumenta o contador para o próximo ID ser diferente
-    return novoElemento; // RETORNA a div prontinha com tudo dentro
+    return novoElemento; // Retorna a div pronta
 };
+
+// 3. O MAP que roda no início para os cursos padrões
+cursos.map((el, chave) => {
+   const novoElemento = criarNovoCurso(el); 
+    caixaCursos.appendChild(novoElemento);   
+    indice++; // Aumenta o índice para os cursos iniciais
+});
+
+
 
 // ==========================================
 // 4. EVENTOS DOS BOTÕES (ANTES / DEPOIS)
@@ -215,7 +226,7 @@ setAttribute: Adiciona o ID único (usando o indice) e as classes CSS (curso c1)
 
 createElement("input") e seus setAttribute: Cria a bolinha de rádio e garante que ela tenha o type="radio" e o name="rb_curso". (Lembra que rádios com o mesmo name trabalham juntos? Se você marca um, o outro desmarca).
 
-comandos.appendChild(rb)    -  coloca o imput já formado e estilizad
+comandos.appendChild(rb)    -  coloca o imput já formado e estilizado
 
 novoElemento.appendChild(comandos): Coloca o rádio que acabamos de criar dentro da nossa div.
 

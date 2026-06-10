@@ -1,0 +1,105 @@
+aula46 método toggle para gerenciar cursos
+uma nova forma sem ser o radio, usando as classes e etc
+
+ou seja adicionar o radio quando selecionar o curo, vai mudar o código algumas coisas , mas vamos anota
+
+primeiro vamos no map(curso.map)   - onde ta os curso
+
+pra isso nos muda o criarNovoCurso
+
+adicionando um evento
+
+ const CriarNovoCurso = document.createElement("div");
+    novoElemento.setAttribute("id", "c" + indice); // Usa o número atual do índice
+    novoElemento.setAttribute("class", "curso c1");
+    
+    novoElemento.innerHTML = curso; 
+    novoElemento.addEventlistener('click',(evt)=>{
+    evt.target.Classlist.toggle('selecionado')
+})    
+
+
+    return novoElemento; // Retorna a div pronta
+};
+
+
+
+
+
+
+nota que
+
+ novoElemento.addEventlistener('click',(evt)=>{
+    evet.target.Classlist.toggle('selecionado')
+
+
+eu fazendo isso vai funcionar, so que acaba que todos os Novoselementos podem ser selecionados, e eu não quero isso
+quero so 1
+
+
+então quando for selecionar outro eu tenho que deselecionar o outro anterior, pra isso nos vai criar uma nova função
+
+
+const tirarSeleçao=()=>{
+  const cursoSelecionados=[...document.querySelectorAll('.selecionado')]
+  cursoSelecionado.map((el)=>{
+  el.classList.remove('selecionar')
+})
+}
+
+fazendo a função no coloca antes da função que adiciona a class, deste jeito
+
+
+novoElemento.addEventlistener('click',(evt)=>{
+    tirarseleçao()
+    evet.target.Classlist.toggle('selecionado')
+
+
+
+deste jeito toda vez que for clica tira a seleção e coloca a atual que adicionou depois de tirar
+
+
+agora no radio onde nos identificava qual foi selecionado, vamos fazer diferente, nos vamos modifica o seguinte, muda o nome e faze isso
+
+const cursoSelecionado=()=>{
+    const cursosSelecionados=[...document.querySelectorAll(".selecionado")]
+    return cursosSelecionados[0]
+}
+
+
+agora nos botões eu posso tirar um códigos efica mas fácil de escrever o código
+
+btnCursoSelecionado.addEventListener("click",(evt)=>{
+if(){}
+   alert("Curso selecionado: " + cursoSelecionado.innerHtml)
+else{}
+
+
+
+as outras coisas vao receber o mesmo ajuste  pegar o cursoSelecionado e coloca como vereficaçao
+e depois identificar e o resto depende do botão
+
+vamos com o remove
+
+
+btnRemover.addEventListener("click",(evt)=>{
+    if(cursoSelecionado()!=undefined){
+    cursoSelecionado.Remove() 
+
+
+
+e  mais um de exemplo é o adicionar
+
+
+
+
+btn_antes.addEventListener("click", () => {
+    if (nomeCurso.value !== "") {
+          const novoCurso = criarNovoCurso(nomeCurso.value);
+          caixaCursos.insertBefore(novoCurso, cursoSelecionado());
+          } else { alert("Digite o nome do curso!"); }
+});
+
+
+
+
