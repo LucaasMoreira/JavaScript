@@ -21,13 +21,15 @@ eu posso criar uma função dentro dele que opera os elementos do filter separad
 vamos la
 
 
-const idades = [12,30,20,34,54,23,44,12]
-const maior = idades.filter(maiorde18)                       -  eu vou falar que ela vai receber o resultado da minha filtragem
-
 const maiorde18 = (valor)=>{
  if valor >= 18
  return valor
 }
+
+
+const idades = [12,30,20,34,54,23,44,12]
+const maior = idades.filter(maiorde18)                       -  eu vou falar que ela vai receber o resultado da minha filtragem
+
 
 
 console.log(maior)

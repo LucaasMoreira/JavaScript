@@ -1,7 +1,7 @@
 aula46 método toggle para gerenciar cursos
 uma nova forma sem ser o radio, usando as classes e etc
 
-ou seja adicionar o radio quando selecionar o curo, vai mudar o código algumas coisas , mas vamos anota
+ou seja adicionar o radio quando selecionar o curso, vai mudar o código algumas coisas , mas vamos anota
 
 primeiro vamos no map(curso.map)   - onde ta os curso
 
@@ -9,7 +9,7 @@ pra isso nos muda o criarNovoCurso
 
 adicionando um evento
 
- const CriarNovoCurso = document.createElement("div");
+ const CriarNovoCurso = document.createElement("div");            -  faltou a função, so um detalhe
     novoElemento.setAttribute("id", "c" + indice); // Usa o número atual do índice
     novoElemento.setAttribute("class", "curso c1");
     
@@ -23,7 +23,7 @@ adicionando um evento
 };
 
 
-
+apago algumas coisas da funçao
 
 
 

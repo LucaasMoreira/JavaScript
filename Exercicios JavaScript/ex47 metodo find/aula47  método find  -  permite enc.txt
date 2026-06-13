@@ -1,0 +1,84 @@
+aula47  método find  -  permite encontra de forma simples algum elemento do array e ele retorna a 1 posição do array quando for 'true'
+
+
+
+
+vou pegar os id importante
+toma cuidado
+
+
+Use querySelector: Sempre que você quiser pegar um elemento único (como um ID ou o primeiro botão de um menu) e já quiser mexer nele direto.
+
+Use querySelectorAll: Apenas quando você quiser pegar um grupo de coisas (todas as divs com a classe .caixa, todos os button da página) para fazer um laço de repetição (forEach) e aplicar algo em todos eles ao mesmo tempo.
+
+
+
+const p_Array = document.querySelector('#array')
+const btnPesquisar = document.querySelector('#btnPesquisar')
+const txt_pesquisar = document.querySelector('#array')
+const resultado = document.querySelector('#resultado')
+
+const arrele = [10,20,4,7,13,44,8,99,2]
+p_Array.innerHTML = '['+ arrele + ']'
+
+
+
+agora usando o método find
+vale lembrar que:
+
+Método .find() - Resumo
+Objetivo: Encontrar o primeiro item de uma lista que atenda a uma regra.
+
+Resultado: * Se achar: Retorna o item direto (e para de procurar).
+
+Se não achar: Retorna undefined.
+
+Regra de ouro: Ele traz apenas um elemento (o primeiro que encontrar), diferente do .filter() que traz uma lista com todos.
+
+
+vamos la:
+
+btnPesquisar.addEventListener('click',(evt)=>{
+    arrele.find((el)=>{
+        if(el == 10){
+            return el
+        }
+    })
+}) 
+
+
+
+terminado com algumas alterações 
+
+tnPesquisar.addEventListener('click',(evt)=>{
+    arrele.find((el,i)=>{
+       if(txt_pesquisar.value != undefined){
+        
+        if(el == txt_pesquisar.value){
+            resultado.innerHTML = 'ele' + el + 'pos' + i
+            return el
+        }
+       }else{
+        alert('digite')
+       }
+    })
+})
+
+
+dependendo posso modificar e ai vai   prra ser certeiro a pesquisa
+
+alias caso for string e sla for maiúsculo so que colquei minusto ou vice versa nos usa um mwtodo chamado
+
+touppercase
+
+nos colocaria nesta parte
+
+ if(el.ToUpperCase() == txt_pesquisar.value.ToUpperCase()){
+            resultado.innerHTML = 'ele' + el + 'pos' + i
+            return el
+
+
+meio que converte caso esteja maiúscula e encontra sem precisar ser igual
+mas caso o array for de string e não numerico
+
+
