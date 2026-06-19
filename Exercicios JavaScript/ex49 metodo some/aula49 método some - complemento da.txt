@@ -1,0 +1,21 @@
+aula49 método some - complemento da aula passada
+some(alguns)
+
+
+basicamente ele vai dar true conforme pelo menos 1(um) ou mais elemento do array coincidir com a minha condição
+
+
+
+const ret=elementos_array.some((el, i)=>{
+if(e<18){                     -             
+resultado.innerHTML = i
+return e>=18
+}
+if(ret){
+resultado.innerTML=el
+}
+console.log ret
+
+
+
+muda só algumas coisas, mas é importante

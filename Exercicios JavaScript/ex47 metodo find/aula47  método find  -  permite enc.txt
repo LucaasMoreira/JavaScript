@@ -1,4 +1,5 @@
 aula47  método find  -  permite encontra de forma simples algum elemento do array e ele retorna a 1 posição do array quando for 'true'
+ou seja conforme  CONDIÇAO
 
 
 

@@ -1,0 +1,50 @@
+aula48 método every - uma variçao do find
+
+ele vai procurar por equivalências ou seja se todos os elementos do array equivale a minha função/regra
+
+exemplo>
+se todos os elemento do array equivale sla, idades maior que 18 vai retorna true, caso contrario false
+básico ate ai
+
+vamso la
+
+const resultado = document.....#resultado
+const elementos_array= [...]
+
+btnPesquisar.addEventListener('click',(evt)=>{
+resultado.innerhtml='arrays não conforme'
+elementos_array.every()
+
+}
+
+mesmo esquema do anterior, vamos aprofundar so com ele
+pra funciona a equivalência precisa de uma condiçao
+
+const ret=elementos_array.every((el)=>{
+return e>=18
+}
+if(ret){
+resultado.innerTML=el
+}
+console.log ret
+
+
+
+agora vamso saber a posição qu n foi true, menor que 18
+
+
+
+
+vai imprimi false ou true dependendo do array
+
+
+
+const ret=elementos_array.every((el, i)=>{
+if(e<18){                     -             ver esta parte
+resultado.innerHTML = i
+return e>=18
+}
+if(ret){
+resultado.innerTML=el
+}
+console.log ret
