@@ -51,7 +51,7 @@ btnPesquisar.addEventListener('click',(evt)=>{
 
 terminado com algumas alterações 
 
-tnPesquisar.addEventListener('click',(evt)=>{
+btnPesquisar.addEventListener('click',(evt)=>{
     arrele.find((el,i)=>{
        if(txt_pesquisar.value != undefined){
         

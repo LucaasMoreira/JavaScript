@@ -9,7 +9,7 @@ p_Array.innerHTML = arr
 pesquisarbtn.addEventListener('click', (evt) => {
     resultado.innerHTML = 'Não encontrado';
     
-    arr.find((el, i) => {
+    arr.some((el, i) => {
         if (el == txt_pesquisar.value) {
             resultado.innerHTML = 'Elemento: ' + el + ' na posição: ' + i;
             return true; 
