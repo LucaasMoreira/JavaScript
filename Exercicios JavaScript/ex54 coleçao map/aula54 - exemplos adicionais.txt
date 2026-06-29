@@ -1,0 +1,41 @@
+aula54 - exemplos adicionais
+
+const caixa=document.querySelector("#caixa")
+
+let mapa=new Map()
+
+mapa.set("curso","Javascript")
+mapa.set(10,"CFB Cursos")
+mapa.set(1,100)
+mapa.set("canal",100)
+
+console.log(mapa)
+
+let pes="teste"
+let res=""
+if(mapa.has(pes)){
+    res="A chave existe na coleção com o valor: " + mapa.get(pes)
+}else{
+    res="A chave NÃO está na coleção"
+}
+res+="<br/> O tamanho da coleção é " + mapa.size
+caixa.innerHTML=res
+
+
+
+explicações 
+
+Este exemplo altera os dados pesquisados e adiciona um contador:
+
+Linha let pes="teste": Agora a pesquisa mudou de 10 para o texto "teste".
+
+Linha if(mapa.has(pes)): Relação de erro/ausência. O .has() procura a chave "teste" na memória do mapa. Olhando lá em cima, nós só temos as chaves "curso", 10, 1 e "canal". Portanto, o teste dá falso (false).
+
+Bloco else: Como deu falso, o código ignora o if e executa o else, definindo que a variável res vai receber o texto "A chave NÃO está na coleção".
+
+Linha res+="<br/> O tamanho da coleção é " + mapa.size: Relação de acréscimo. O operador += significa "pega o que já tá na variável res e junta com mais isso". Ele adiciona uma quebra de linha HTML (<br/>) e puxa a propriedade .size direto da RAM do mapa. Como colocamos 4 itens no .set(), o mapa.size vale 4.
+
+Linha caixa.innerHTML=res: Envia o texto combinado final para a tela. O resultado que o usuário vai ler no navegador será exatamente este:
+
+A chave NÃO está na coleção
+O tamanho da coleção é 4

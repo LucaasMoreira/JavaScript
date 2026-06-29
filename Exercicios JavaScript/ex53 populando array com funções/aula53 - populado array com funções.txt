@@ -1,0 +1,46 @@
+aula53 - populado array com funções
+
+basicamente criar uma serie de funções em um array
+exemplos:
+
+let valores = [0,10,20]
+const op = [
+
+(el)=>{
+  res = 0
+  for(v of el){
+  res+= v}
+  return res
+},
+
+(el)=>{
+  res = 1
+  for(v of el){
+  res*= v}
+  return res
+},
+
+(el)=>{
+  res = 0
+  for(v of el){
+  console.log(v)
+}
+
+]
+
+
+
+seria isso basicamente ai caso queira chamar, vamos de ex console.log() nos faz
+
+console.log(op[1])    -  chama o array e a função dele
+
+
+e para dizer qual parâmetro passar pro el que seria o array com os números seria coloca () do lado
+
+console.log(op[1](valores))
+
+
+e como no final quero so ver os valores eu não preciso usar console.log
+eu posso chamar assim:
+
+op[2].valores

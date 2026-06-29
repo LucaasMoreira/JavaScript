@@ -1,0 +1,47 @@
+aula55 coleção set 
+
+uma particularidade dela é que ela não permite entradas duplicadas de valores
+é quase igual o map
+
+let musica = new set()         -        instancia a coleção usamos new para reserva memoria
+
+diferente do map, nos pode adicionar os elementos no próprio construtor
+let musica = new set(['musicas', 'musica boa','top'])
+
+temos basicamente as mesma configurações da coleção map,  oq mudou foi o set que agora é 'add'
+
+let musica = new set(['musicas', 'musica boa','top'])
+
+musica.add('top100')
+musica.add('musica boa')     -  não vai conta como um adicionamento pq já tem no set
+
+console.log(musica)
+
+
+a vantagem do set é isso ele não aceita itens duplicados
+
+
+vamos com adicionais pra reforça o estudo
+
+
+let musica = new set(['musicas', 'musica boa','top'])
+
+musica.add('top100')
+musica.add('musica boa')     
+
+
+musica.delete('')  -  deleta algum valor
+musica.clear('')  - deletar tudo, pode especificar oque tmb
+
+musica.ForEach((el)=>{
+  caixa.innerhtml += el ','           -        posso adicionar usando método for each
+})  
+
+ou tbm o for of
+
+
+for(let m of musica){
+ caixa.innerhtml += m + ","
+}
+
+console.log(musica)

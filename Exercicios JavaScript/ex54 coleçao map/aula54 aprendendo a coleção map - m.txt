@@ -1,0 +1,81 @@
+aula54 aprendendo a coleção map - mais atual
+
+a coleção map é diferente do que nos aprendeu ate agr, vamos ver a diferença.
+
+a caracterisca da coleção map é que é uma coleção do tipo chave valor, diferente do array que nos pode sadd elemento em cada uma das posições e a refrencia é o próprio elemento.
+
+e como nos declara
+
+let  mapa = new Map()
+
+e agr como posso adicionar elementos dentro dele, tem algumas propriedades
+introduzindo elas
+
+para adicionar nos usa o 'set'
+
+let  mapa = new Map(
+mapa.set('curso','valor')                   -         sempre sendo chave e valor
+)
+
+
+para adicionr mais so fazer dnv
+
+let  mapa = new Map(
+mapa.set('curso','valor')
+mapa.set('curso','valor')
+mapa.set('curso','valor')
+)
+
+
+
+vamos mostrar no console
+
+cosnole.log(mapa)   -   mostra todas as chaves e elemento
+
+se nos especificar:
+
+console.log(mapa())
+
+
+introduzindo mais
+para vereficar o valor de algo nos usa 'get', por agr so vi usando fora do mapa para adicionar em algun lugar
+
+caixa.innerhtml = mapa.get(curso)    -   adicionando na caixa o valor da chave curso
+
+
+
+
+agora quero saber se uma chave existe na minha coleção ou não com o 'has'
+exemplo:
+
+if(mapa.has('curso')){
+caixa.innerHTML = tem
+}else{
+caixa.innerHTML = não tem
+
+
+introduzindo o 'size' que verifica o tamanho da coleção
+exemplo
+
+res+= '<br/> o tamanho da coleção é' + mapa.size   -   ela é uma propriedade  o ' size'
+
+
+
+introduzind o 'delete ' deleta o elemento da chave que especificar
+let  mapa = new Map(
+mapa.set('curso','valor')
+mapa.set('curso2,'valor2)
+mapa.set('curso3,'valor3)
+mapa.delet('crso')
+)
+
+
+então hoje fot
+
+set - adicionar chave e valor
+has - verificar se tem na coleção map algo
+get - verefica o valor da chave
+delete - deleta o elemento
+size - verifica o tamanho da coleção 
+
+

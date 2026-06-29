@@ -1,0 +1,88 @@
+aula51 aprendendo iteradores
+
+tipos de coleção iterável, exemplos
+
+map
+arrays
+string
+sets
+
+
+mas oque é uma coleção iterável
+
+ela retorna um iterador que fica fácil nos trabalha os elementos desta coleção
+
+vamos de exemplos
+
+const valores = [10,20,,0]
+const it_v = valores[symbol.iterator]()
+
+console.log(valores)
+console.log(it_v.next())
+console.log(it_v.next().value)  done false
+console.log(it_v.next().value)  done false
+console.log(it_v.next().value)  done false
+console.log(it_v.next().value)  done true
+
+
+explicações
+
+
+
+
+
+
+
+
+
+
+
+
+📝 Resumo de Aula: Iteradores e Elementos Iteráveis (Aula 51)
+O objetivo principal dessa aula foi esclarecer de uma vez por todas o que são Iteradores e elementos Iteráveis no JavaScript, mostrando como eles funcionam por baixo dos panos nas coleções de dados.
+
+1. O que são Elementos Iteráveis?
+São estruturas ou coleções de dados que possuem a capacidade de serem percorridas (iteradas) elemento por elemento.
+
+Exemplos de coleções iteráveis: Arrays, Strings, Map e Set.
+
+Como eles funcionam? Toda coleção iterável possui um método interno que serve para criar o seu respectivo iterador.
+
+2. O que é um Iterador (Iterator)?
+O iterador é o mecanismo/objeto responsável por controlar e realizar o passo a passo da leitura dos elementos dessa coleção. É ele quem sabe qual é o elemento atual e se a lista já chegou ao fim.
+
+3. O Método Principal: .next()
+O professor Bruno demonstrou que, ao criar um iterador a partir de um Array ou de uma String, nós podemos avançar manualmente pelos elementos utilizando o método .next().
+
+Toda vez que você chama o método .next(), ele retorna um objeto com duas propriedades cruciais:
+
+value: O valor do elemento atual da iteração.
+
+done: Um valor booleano (true ou false). Ele indica se a iteração chegou ao fim.
+
+false: Significa que ainda existem elementos para ler.
+
+true: Significa que a coleção terminou (e o value passa a ser undefined).
+
+
+
+
+💻 Exemplo Prático de Código (Para anotar)
+JavaScript
+// 1. Criando uma coleção iterável (um array)
+const num = [10, 20, 30];
+
+// 2. Criando o iterador para esse array
+const it_num = num[Symbol.iterator]();
+
+// 3. Consumindo os elementos manualmente com o .next()
+console.log(it_num.next()); // Retorna: { value: 10, done: false }
+console.log(it_num.next()); // Retorna: { value: 20, done: false }
+console.log(it_num.next()); // Retorna: { value: 30, done: false }
+console.log(it_num.next()); // Retorna: { value: undefined, done: true } -> Acabou!
+
+
+
+📌 Conclusão da Aula
+Funções e loops que usamos no dia a dia (como o método .map(), o loop for...of, etc.) utilizam exatamente esse mecanismo do iterador e do método .next() de forma automática e invisível no JavaScript para saber quando parar e como passar de um elemento para o outro.
+

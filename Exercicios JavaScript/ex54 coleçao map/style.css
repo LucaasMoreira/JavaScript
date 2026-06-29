@@ -1,0 +1,58 @@
+/* Configuração para centralizar a calculadora na tela inteira */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.d1 {
+    border: solid 5px black; /* Diminuí um pouco a borda para não sufocar */
+    border-radius: 10px;
+    padding: 20px;
+    color: black !important;
+    background-color: white;
+    display: flex;
+    flex-direction: column; /* Coloca os elementos um embaixo do outro */
+    gap: 10px; /* Cria um espaçamento maneiro entre os inputs e botões */
+    width: 200px;
+}
+
+/* Estilo da área que mostra o resultado */
+.res3 {
+    border: solid 3px green;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Estilo dos inputs */
+.it {
+    color: red;
+    font-size: 16px; /* Aumentei para 16px porque 10px fica muito pequeno para ler */
+    font-weight: bold;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilo estético rápido para os botões */
+button {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #eee;
+}
+
+button:hover {
+    background-color: #ddd;
+}

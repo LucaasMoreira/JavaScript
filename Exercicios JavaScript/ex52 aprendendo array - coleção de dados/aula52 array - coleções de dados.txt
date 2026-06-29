@@ -1,0 +1,70 @@
+aula52 array - coleções de dados
+
+aprender possibilidade de armazena dados em coleções e as coleções dentro do java script
+
+vamos la
+
+oque é um array:
+array é uma coleção de dados(uma coleção de 'variáveis')
+então ao invés de eu criar varias variáveis eu crio um array e neste array eu vou adicionando valores na maneira que eu quiser
+
+e oque indica que  é um array
+utilizando [] - chaves
+
+const curso = []
+
+aqui tem um exemplo  e mais ums adicionais
+****
+
+
+
+
+ag se eu quero trabalhar elemento por elemento, nos tem algumas opções tipo:
+posso usar o básico
+console.log(curso[0]) indicando o índice que eu quero usar
+
+
+ai vamos supor que eu quero mudar a posição(atribuir um novo valor) 0 do array
+so nos indicar
+
+curso[0] = ' php '
+
+
+
+
+e se eu quiser adicionar ou tirar elemento no array, fácil:
+
+tem 2 funções
+
+push - adicionar depois
+unshift - adicionar antes
+pop - tirar do final
+shift - tirar do inicio
+
+
+so que o 'push' ele adiciona no final caso eu queira quiser seja no começo nos usa 'unshift'
+das mesma maneira o 'pop' so pode tirar no final nos tem o 'shift' para tirar no começo 
+
+e se eu usar o pop sem indicar ele tira o ultimo elemento do array
+
+
+****
+
+
+
+
+
+
+agora u caso que seria, se eu criei um array e coloquei no final de outro array o array, nos vai ter uma coleção de dados naquele array
+mas caso eu queira especificar em algum lugar, vamos de exemplo console log
+
+
+
+console.log(curso[3][1]))  - aqui eu uso o array principal pra dizer ir na posição 3 do array que seria a coleção de dados que adicionei
+e depois eu indico a posição daquela coleção de dado
+
+meio que estou entrando numa hierarquia ate chegar no filho, assim dizer
+
+
+isso é um conceito que chamamos de 'MATRIZES'
+quando tenho um array dentro de uma array

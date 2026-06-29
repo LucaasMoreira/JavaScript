@@ -1,0 +1,38 @@
+aula 50 método reduce -reduzir elementos de array
+
+
+este método ele permite fazer uma redução do array com a nossa predefinição 
+
+const arr = [...]
+
+btnREduzir.addeventListener('click',()=>{
+arr.reduce()
+})
+
+mesma coisa que as outras agrr so que le epode receber um 'parâmetro a mais'
+que seria o estado anterior(previousValue) além do atual claro, mas não é o valor anterior do array
+
+então fica:
+
+btnREduzir.addeventListener('click',()=>{
+arr.reduce((anterior,atual,indice)=>{                 - claro que ainda tem o array, mas n usaremos
+  })
+})
+
+vamos ver como funciona
+
+btnREduzir.addeventListener('click',()=>{
+resultado.innerHTML=arr.reduce((anterior,atual,indice)=>{
+    return atual+anterior
+  })
+})
+
+
+como funciona, ele vai pegar o array e vai somar o atual e anterior
+vamos supor que o atual é 1 e o anterior é 0
+
+ele soma então agr o anterior é 1 e o atual é 2 e quando somar de novo o anterior acaba sendo 3 e o atual 3
+então funciona assim o  raciocínio do método reduce
+
+
+se eu quiser que o 'push' mostra o anterior so eu colocar a variável e [0]
