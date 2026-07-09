@@ -1,0 +1,35 @@
+aula59 entendendo sobre objetos em js
+
+
+vamos praticar
+
+oque nos vai fazer
+
+a pessoa vai colocar o nome e a idade, adicionar e os dados aparecer no resultado
+
+1- vamos pegar o button
+2- pegar resultado
+3- crio um ecvento pro buton
+4- crio uma variável que sera array
+
+
+
+depois
+1- vou criar a pessoa e adicionar ela em um array
+usando variável + query + value
+2-criar uma constante com new 'nome que escolher' e add as constante
+
+3-colocar na variável array dando push
+4-agora vamos mostrar o resultado no res
+
+5-posso criar uma função para isso que o res recebe pessoas, é uma possibilidade
+6-mas vamos de map, então pessoas.map()
+7-ele vai percorre o parâmetro e criar elemento div
+8- daremos setatribute e indicar que oque vamos add no elemento criado na constante div sera o próprio parâmetro
+9- mas queremos mostrar o nome e idade então nos coloca o parâmetro que é os elementos e o método que retorna o nome e da idade tbm
+10- eu add essa div no res, claramente usando appendchild
+
+
+
+ate deu certo so que ele add a pessoa feita anterior e o de agora então pra isso não acontecer, vamso resolver:
+1- fazendo o res limpar no começo a cada vez que eu usar

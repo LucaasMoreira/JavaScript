@@ -1,0 +1,29 @@
+extensão aula58
+
+
+Resumo: Entendendo Objetos e o 'this' em JS (Aula 56)
+1. O que é a Class e o New?
+
+• Class (Classe): É o molde ou a receita. Não ocupa espaço como um objeto real, apenas diz como ele deve ser.
+
+• New: É o comando que liga a fábrica. Ele cria um espaço fixo e exclusivo na memória para cada objeto (ex: `c1`, `c2`).
+
+2. Por que usar 'this' e não 'let'?
+
+• let: Cria uma caixinha temporária fora do objeto. Assim que o construtor termina de rodar, essa caixinha é apagada e o objeto fica vazio.
+
+• this: É a supercola. Ele especifica a caixa da vez (ex: vira o `c1`) e guarda a propriedade direto dentro dela para sempre.
+
+3. Propriedades vs Métodos
+
+• Propriedades: Características/valores do objeto (ex: `this.nome`, `this.velmax`).
+
+• Métodos: Ações que o objeto faz (ex: `info()`, `getnome()`). Em classes, usamos a sintaxe direta: `nomeMetodo() { }`.
+
+4. Getters, Setters e Arrays
+
+• Obter dados: Para chamar métodos de pegar valor, use parênteses: `console.log(c1.getnome())`.
+
+• Retorno em Array: Retornar propriedades em formato de Array (`return [this.nome, this.velmax]`) é excelente para usar depois com métodos como `.map()` e `.filter()`.
+
+• Mudar dados (Set): Métodos para alterar valores não precisam de `return`, apenas mudam o valor da propriedade (ex: `this.nome = novoNome`).

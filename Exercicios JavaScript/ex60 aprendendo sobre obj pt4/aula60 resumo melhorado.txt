@@ -1,0 +1,54 @@
+aula60 resumo melhorado
+
+duvida do this no começo do método
+
+Na Função Construtora (da foto): O JavaScript é "burro" nesse sentido. Se você não colocar this.getNome, ele acha que você está criando uma função local, que vai sumir assim que a função terminar de rodar. Você é obrigado a desenhar: "Ei, coloque isso no this (na caixa)".
+
+Na Classe (class): O JavaScript já sabe que você está criando um molde. Quando você escreve getNome() { ... } direto lá dentro, ele já subentende: "Beleza, não preciso que o usuário digite this.getNome = function, eu já sei que esse método pertence a essa classe e deve ir para a caixa de quem for criado".
+
+
+
+=======================================================================
+            MEU BLOCO DE NOTAS - REVISÃO DE JAVASCRIPT
+=======================================================================
+
+1. FUNÇÃO CONSTRUTORA vs CLASSE (A metáfora da Caixa)
+-----------------------------------------------------------------------
+* Função Construtora (Antiga): O JavaScript é "burro" para entender o
+  contexto sozinho. Você é OBRIGADO a usar "this.metodo =" para dizer
+  para o JavaScript entrar na caixa do objeto e salvar a função lá dentro.
+  Se esquecer do "this", a função roda como local e é excluída da memória.
+
+* Classe (Moderna): É apenas uma roupa mais bonita para a função construtora.
+  O JavaScript já é inteligente e sabe que tudo que você escreve direto
+  no corpo da classe deve entrar automaticamente na caixa do objeto,
+  sem precisar digitar "this.nomeDoMetodo = function()".
+
+2. O MISTÉRIO DOS DOIS "THIS" (Ex: this.getNome = function() { return this.nome })
+-----------------------------------------------------------------------
+* Primeiro "this" (this.getNome = ...): Serve para CRIAR e guardar o método
+  dentro da caixa do objeto atual.
+* Segundo "this" (return this.nome): Fica guardado para o futuro. Quando
+  o método for chamado (ex: p1.getNome()), ele diz: "Pegue o nome DESTE
+  objeto específico que me chamou agora".
+
+3. OBJETO LITERAL
+-----------------------------------------------------------------------
+* É quando você cria um objeto direto usando chaves { }, sem precisar de 
+  um molde (classe ou função). 
+* Usado para dados rápidos e únicos.
+* Exemplo: const pessoa = { nome: "Bruno", idade: 30 };
+
+4. FUNÇÃO ANÔNIMA
+-----------------------------------------------------------------------
+* É uma função que não tem um nome próprio (ex: function() { ... }).
+* Ela é jogada diretamente dentro de uma variável ou de uma propriedade 
+  do objeto (como no caso do "this.getNome = function()").
+
+5. FUNÇÃO NORMAL vs ARROW FUNCTION (=>)
+-----------------------------------------------------------------------
+* Função Normal: O "this" é dinâmico. Ele aponta para quem chamou a função 
+  naquele momento (se p1 chamou, o this é p1).
+* Arrow Function (=>): É fixa. Ela não tem um "this" próprio; ela pega 
+  emprestado o "this" do bloco de código que está em volta dela.
+=======================================================================

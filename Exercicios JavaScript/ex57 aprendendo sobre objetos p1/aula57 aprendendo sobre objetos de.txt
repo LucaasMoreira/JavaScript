@@ -1,0 +1,71 @@
+aula57 aprendendo sobre objetos de formar geral
+
+pra entender vamso começar a fala do objeto com o operador new
+
+
+que seria a base que vai complementar desde objetos e propriedades
+
+explicações
+
+
+vamos começar com uma forma tradicional utilizando o class
+
+class pessoa{}
+
+e vamos criar método
+uma método que nos precisa entender é construtor
+
+e oque ele faz:
+ele é automaticamente chamado quando eu instancio um novo objeto desta class
+
+class pessoa{
+constructor(){
+this.nome bruno
+}
+}
+
+
+let p1 = new pessoa()   <---
+
+
+pq nos não colocamos nada no parênteses em pessoa()
+
+pq o parênteses ele faz uma referencia direta do parênteses da class, pois bem, se nosso construtor não recebe nenhum parâmetro,
+ao instaciar a class nos também não vamos passar nenhum parâmetro
+
+
+se eu imprimi console.log(p1.nome)
+
+ele vai imprimir bruno, mas por que
+
+no construtor toda vez que utilizo o operador new eu estou instanciando um novo objeto desta class
+
+ou seja ela vai la na memoria cria uma caixinha do tipo pessoa como nos pos, com o nome da variável
+
+ou seja na caixa vai esta p1(pessoa) - exemplo
+
+dentro do p1 vai ter tudo imprementado na class pessoa
+
+no construto eu criei uma variável nome e atribui bruno
+
+então quando dei console.log()
+
+ele foi la na variável p1que eu instanciei a class e foi na propriedade nome e pegou o seu valor
+
+ou seja o construtor foi automaticamente foi executado quando eu acionei new
+
+wntao ele instaciona a nova class e executa o método construtor automaticamente
+
+
+
+foi por isso
+
+
+agora se eu colocar uma parâmetro eu vou ser obrigado a colocar um valor na propriedade
+
+constructor(p1nome)
+this.nome = p1nome
+}
+
+let p1 = new pessoa('bruno')
+console.log(p1)

@@ -1,0 +1,167 @@
+aula59 resumo de tudo
+
+===================================================================
+RESUMO DE OURO E EXPLICAÇÃO DO CÓDIGO - AULA 59 JAVASCRIPT
+===================================================================
+
+-------------------------------------------------------------------
+1. O RESUMO DE OURO (A Lógica do 'ret' e dos Getters)
+-------------------------------------------------------------------
+Você descobriu que a variável 'ret' não guarda apenas o nome e a 
+idade soltos. Ela guarda o PACOTE COMPLETO: as propriedades 
+(nome, idade) e também as funções (getnome, getidade).
+
+Quando você usa o 'presultado.push(ret)', o array passa a guardar 
+uma lista desses pacotes fechados na memória.
+
+O seu HTML é "burro" e não consegue ler um pacote fechado direto 
+(por isso ele mostra [object Object]). Então, dentro do .map(), 
+nós usamos o 'el.getnome()' e 'el.getidade()' para abrir esse 
+pacote específico, pegar o valor lá de dentro e entregar em texto 
+puro para o HTML conseguir mostrar na tela. 
+
+O console.log consegue abrir o pacote sozinho no F12, mas o HTML 
+da página precisa que você abra para ele usando o 'return' dos gets!
+
+-------------------------------------------------------------------
+2. EXPLICAÇÃO LINHA POR LINHA DO SEU CÓDIGO
+-------------------------------------------------------------------
+
+const addb = document.querySelector("#btn_add")
+-> Linha 1: Procura o botão de adicionar no HTML pelo ID "#btn_add" 
+   e guarda na variável 'addb'.
+
+const res = document.querySelector(".res")
+-> Linha 2: Procura a caixinha onde o resultado vai aparecer no HTML 
+   pela classe ".res" e guarda na variável 'res'.
+
+class pessoa {
+-> Linha 4: Cria o MOLDE (a planta da casa) chamado 'pessoa'. Não 
+   gasta quase nada de memória ainda, é só a regra de como criar.
+
+    constructor(pname, pidade) {
+        this.nome = pname
+        this.idade = pidade
+    }
+-> Linhas 5 a 8: O CONSTRUTOR. É a função que roda sozinha quando você 
+   usa o 'new'. Ela recebe o nome e idade de fora e tranca eles dentro 
+   do objeto nas propriedades 'this.nome' e 'this.idade'.
+
+    getnome() {
+        return this.nome
+    }
+    getidade() {
+        return this.idade
+    }
+}
+-> Linhas 9 a 14: Os MÉTODOS GET. São as portinhas de acesso. O 'return' 
+   serve para pegar o que está trancado lá no 'this' e cuspir para fora 
+   em forma de texto puro.
+
+let presultado = []
+-> Linha 16: Cria um array (uma lista) vazio na memória chamado 
+   'presultado' para guardar os pacotes de pessoas que vamos criar.
+
+let funçaores = () => {
+-> Linha 18: Cria a função 'funçaores', que é o "desenhista" da tela.
+
+    res.innerHTML = ''
+-> Linha 19: Limpa toda a tela antiga de resultados para não duplicar 
+   os nomes quando o mapa rodar.
+
+    presultado.map((el) => {
+-> Linha 20: O .map() começa a caminhar pela lista de pessoas. Cada 
+   pacote de pessoa encontrado na vez é chamado de 'el' (elemento).
+
+        const cdiv = document.createElement("div")
+-> Linha 21: Cria uma tag <div> novinha na memória do navegador.
+
+        cdiv.setAttribute("class", "pessoa")
+-> Linha 22: Coloca a classe CSS "pessoa" nessa div para ela puxar o 
+   estilo visual do seu arquivo CSS.
+
+        cdiv.innerHTML = `nome: ${el.getnome()} e idade: ${el.getidade()}`
+-> Linha 23: Abre o pacote 'el' usando os métodos 'get', pega o texto 
+   puro de cada um e joga dentro da div criada.
+
+        res.appendChild(cdiv)
+    })
+}
+-> Linhas 24 a 26: Pega a div prontinha com o texto e joga ela 
+   fisicamente dentro do container ".res" no HTML. Fecha o mapa 
+   e a função.
+
+addb.addEventListener("click", () => {
+-> Linha 28: Diz ao navegador: "Fique ouvindo o botão. Quando o usuário 
+   clicar nele, execute tudo o que está aqui dentro".
+
+    const pnome = document.querySelector("#f_nome")
+    const pidade = document.querySelector("#f_idade")
+-> Linhas 29 e 30: No momento exato do clique, captura os dois campos 
+   de input de texto do HTML.
+
+    const ret = new pessoa(pnome.value, pidade.value)
+-> Linha 31: A MÁGICA ACONTECE! O 'new' gasta memória RAM real, ativa 
+   o 'constructor', cria o pacote do objeto com o que foi digitado e 
+   guarda tudo na variável 'ret'.
+
+    presultado.push(ret)
+-> Linia 32: Pega esse pacote 'ret' e empurra (adiciona) para o final 
+   do array 'presultado'.
+
+    pnome.value = ''
+    pidade.value = ''
+-> Linhas 33 e 34: Limpa o texto das caixinhas visuais da tela para o 
+   usuário poder digitar o próximo sem ter que apagar manualmente.
+
+    pnome.focus()
+-> Linha 35: Joga a barrinha de digitação piscando de volta para o campo 
+   do Nome automaticamente.
+
+    funçaores()
+})
+-> Linhas 36 e 37: Chama a função que limpa a tela e redesenha a lista 
+   com o novo pacote incluso, e fecha o evento do botão.
+===================================================================
+
+
+
+
+
+
+
+
+adicionais importantes
+
+
+
+
+
+
+
+
+
+A resposta correta é a sua segunda opção: é porque dentro de cada elemento do array existe a propriedade this.nome. A posição dele no array não tem nada a ver com o fato de ele saber quem é o nome ou a idade.
+
+Para você entender perfeitamente, pense no seguinte:
+
+O Array é uma Garrafeira (uma caixa de caixas)
+Quando você faz presultado.push(ret), imagine que você está colocando uma caixa trancada dentro de uma gaveta do array.
+
+Na gaveta 0 do array, está o ret do Lucas.
+
+Se você adicionar outra pessoa, na gaveta 1 do array vai estar o ret do Carlos.
+
+Quando o .map((el) => { ... }) roda, a variável el representa a caixa inteira que está dentro daquela gaveta.
+
+O que tem dentro da caixa el?
+Dentro dessa caixa (el), não importa em qual gaveta do array ela esteja, ela sempre vai ter a mesma estrutura interna que foi definida lá no molde da classe:
+
+JavaScript
+el = {
+    nome: "Lucas",  // <-- O this.nome está aqui dentro!
+    idade: "18",   // <-- O this.idade está aqui dentro!
+    getnome: function() { ... },
+    getidade: function() { ... }
+}
+Então, quando você digita el.getnome(), o JavaScript não está olhando se o nome é o "primeiro valor" do array. Ele simplesmente abre a caixa el, olha lá dentro e procura pela função getnome(), que por sua vez sabe exatamente como pegar a propriedade nome dentro daquela mesma caixa.

@@ -1,0 +1,144 @@
+aula56 entendendo sobre obj em js
+
+criando propriedades alem de métodos
+vamos adicionar uma funcionalidade nova
+
+class nome{
+    constructor(name, tipo){         -  o tipo, mas oq ele é: ele vai ser um numero
+        this.nome = name
+    }
+}
+
+let p1 =new nome('bruno')
+let p2 =new nome('maria')
+
+console.log(p1.nome)
+console.log(p2.nome)
+
+
+
+então,
+
+class nome{
+    constructor(name, tipo){        
+        this.nome = name
+if(tipo == 1){
+  this.vaiser = 'esportivo'
+        }
+    }
+}
+
+
+vamos aprofundar agr
+vou adicionar mais e tbm adicionar velocidade
+
+
+
+class carro{
+    constructor(name, tipo){        
+        this.nome = name
+if(tipo == 1){
+  this.vaiser = 'esportivo'
+  this.velmax = '100'
+        }
+else if(tipo == 2){
+        this.vaiser = 'utilitario'
+        this.velmax = '150'
+        }
+else if(tipo == 3){
+        this.vaiser = 'militar'
+        this.velmax = '200'
+        }
+    }
+}
+
+
+
+
+agora para instanciar preciso passar tanto o tipo quanto o nome
+
+
+let c1 =new carro('mazda',1)
+let c2 =new carro('ferrari',2)             -    aparti que for chamado o new ele cria um espaço na memoria,cria a caixa e armazena oque ta
+let c3 =new carro('bugatti',3)                  no class então o nome, tipo e etc
+
+e posso especificar oque mostra quando chamar
+
+console.log(c1.nome)
+console.log(c1.vaiser)
+console.log(c1.velmax)
+
+
+
+so que seria interessante ter um método que retorna as propriedades de uma vez so
+como faremos
+é fácil nos cria o método e depois chama junto com a variável
+
+
+info(){
+console.log('nome' + this.nome)
+console.log('sera' + this.vaiser)
+console.log('velocidade' + this.velmax)
+}
+
+*chamando
+ importante ser antes da variável c1 new criada
+
+c1.info()
+
+
+
+mas nos podemos melhorar usando template string, vamos la
+
+
+info(){
+console.log(`nome ${this.nome}`)
+console.log(`sera $this.vaiser}`)
+console.log(`velocidade ${this.velmax}`)
+}
+
+
+mas so faz impressão no console
+
+mas nos pode trabalhar com métodos que cria ou obtem propriedades,
+
+vamos obter
+criar método e colocar as coisas
+
+getnome(){
+return this.nome
+}
+
+getvaiser(){
+return this.vaiser}
+
+getvelmax(){
+return this.velmax
+}
+
+ai quando quiser mostrar ou retorna pra algum lugar
+
+console.log(c1.getnome())    -   e por ai vai
+
+
+posso retorna tbm em um array
+
+getinfo(){
+return [this.nome,this.vaiser,this.velmax]
+}
+
+console.log(c1.getinfo())
+console.log(c1.getinfo()[0])    -    especeficar
+
+
+
+
+agora vamso mudar, sem ser utilizando get, vamso adicionar, lembrando que get ou set é modo de falar mas nos não esta usando eles
+
+setinfo(name){
+ return this.nome = name
+}
+
+c1.setinfo('superveloz)
+console.log(c1)
+

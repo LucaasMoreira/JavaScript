@@ -1,0 +1,35 @@
+aula60 entendendo sobre objetos em js
+
+nos vamos colocar function na class pra entender como funciona os objetos literais
+ou seja:
+criar uma class a parti de uma função
+
+então cria a função
+
+function pessoa(){
+constructor(pname){
+this.nome = pname}
+}
+
+e nos tira o constructor e mantenha o resto do conteúdo e os parâmetros fica na funçao, entao completo fica assim
+
+function pessoa(pname){
+this.nome = pname,
+}
+
+
+
+alias temos que separar por virgula
+
+mas, como nos criamos os métodos deste modo, simples usamos funções anônimas
+então seria basicamente assim
+
+invez de 
+
+getnome(){}
+
+nos colocamos
+
+this.getnome = function (){}
+
+e acrescentar o this
