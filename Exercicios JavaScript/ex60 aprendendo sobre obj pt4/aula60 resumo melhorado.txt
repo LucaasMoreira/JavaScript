@@ -52,3 +52,16 @@ Na Classe (class): O JavaScript já sabe que você está criando um molde. Quand
 * Arrow Function (=>): É fixa. Ela não tem um "this" próprio; ela pega 
   emprestado o "this" do bloco de código que está em volta dela.
 =======================================================================
+
+
+
+
+
+adicionais sobre o new
+
+
+* O que é a Função/Classe (O Molde): É só o desenho do projeto. Sozinha, ela não gera nenhum dado na memória e não cria nenhuma "caixa". Por isso, colocar o "new" dentro dela daria erro na hora.
+* O que o "new" faz: Ele é o botão de ação. Ele pega esse desenho do projeto, cria uma caixa de verdade na memória e joga as informações lá dentro.
+* Onde usar o "new" no dia a dia: Ele SEMPRE fica do lado de fora do molde. Você usa ele de duas formas práticas:
+  1. Direto na variável para salvar uma pessoa: const p1 = new Pessoa("Bruno", 30);
+  2. Direto no push do Array para encher a lista: lista.push(new Pessoa("Carlos", 20));

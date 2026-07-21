@@ -1,0 +1,57 @@
+aula61 objetos literais entendendo
+
+no conceito de obj literais nos n temos esses obj independentes
+então se eu criar vários obj da mesma classe todos vão apontar mesmo lugar da memoria
+
+por exemplo:
+
+vamos criar obj e dentro dela vamos colocar os metodos e propriedade do obj
+
+const pessoa = {
+ nome: 'bruno'                      -    nos atribuímos valor com ':'   agora
+ }
+
+console.log(pessoa.nome)
+
+caso eu crio uma variável e falo que recebe a constante pessoa, mesmo sendo uma variável diferente ela recebe o mesmo valor
+
+const p2 = pessoa
+
+e caso eu mude o valor da const pessoa em alguma variável diferente ela mudara todas as outras, ou seja como falei
+ela aponta pro mesmo lugar da memoria
+
+const p3 = pessoa
+
+p3.nome = 'claudio'
+
+console.log(p2,p3)   -   imprimi o mesmo valor
+
+uma forma diferente que posso usar pra chamar o obj e mudar o valor seria
+
+const p3 = pessoa
+
+p3['nome'] = 'claudio'
+
+
+
+
+vamos criar os métodos que são bem parecidos com os outros
+
+const p3 = pessoa
+
+
+const pessoa = {
+ nome: 'bruno',                      -    nos atribuímos valor com ':'  no método tbm 
+ getnome: function(){
+  return this.nome
+},
+ setnome: function(el){            -  estou dizendo que dependete da variável que chamar o método vou mudar o nome com base eu coloco
+ this.nome = el                       o valor no parametro
+}
+ }
+
+
+pessoa.setnome('beatriz')
+
+console.log(p3.getnome())
+

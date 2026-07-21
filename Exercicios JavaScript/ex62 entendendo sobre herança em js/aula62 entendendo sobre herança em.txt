@@ -1,0 +1,103 @@
+aula62 entendendo sobre herança em poo com js
+
+herança é quando tenho uma class que herda outra class
+então tudo que esta no pai vai ceder pra class filhos
+
+crio uma class pai e coloco constructor que é um método que é chamado quando a class é instanciado
+
+class carro{
+	constructor(){}
+}
+
+
+vamos então criar a base do carro da class pai
+
+class carro{
+	constructor(nome, portas){
+		this.name = nome
+		this.portas =portas
+		this.ligar = false
+		this.vel = 0
+		this.cor = undefined	
+}
+//vamos criar agora métodos
+
+ligar=function(){
+	return this.ligar = true
+}
+desligar=function(){
+	return this.ligar = false
+
+}
+setcor=function(color){
+	return this.cor = color
+}
+}
+
+
+cada um desses carros tem particularidade, mas todas essas propriedades precisa tar setados em todos os carros
+
+ai que entra o conceito de herança
+vamos la:
+
+nos cria uma class e vamos dar um nome do carro que nos quer criar
+e vamos colocar uma palavra reservada que define que é uma herança que é 'extends' e depois dele colocamos a class que el vai herda a herança que é o 'carro'
+
+class militar extends carro{
+
+}
+
+automaticamente a class militar tem todas os elementos que foi definido na class pai(carro)
+
+vamos criar um carro militar
+
+const c2 = new militar(){}
+
+
+mas se nos dar um console.log no c2 com o nome portas e etc, vai dar erro pq n foi definido, so os 3 finais
+pq nos tbm n colocou os parâmetros
+
+nos então vai ter que colocar um constructor na class filho
+
+então nos tem que passar os parâmetro nome e portas, mas quero passar tbm blindagem e munição, lembrando que eles são proprio da class filho e não do pai
+
+class militar extends carro{
+	constructor(nome, portas, blindagem, muniçao){}
+}
+
+
+agora vem uma parada interessante, eu preciso passar pro pai o nome e portas
+e como fazemos isso? invocamos o constructor do pai utilizando uma palavra chamada 'super', que especifica oque queremos
+
+
+class militar extends carro{
+	constructor(nome, portas, blindagem, muniçao){
+	super(nome, portas)
+	this.blindagem = blindagem
+	this.muniçao = munição
+	thsi.setcor('verde')             -   eu chamo o método da class pai e definco a cor pra verde de todos os carros militar
+}
+//cliaremso um método
+atirar=function(){
+ if(this.muniçao > 0){                   -       uma função que tira munição se for maior que 0
+  this.muniçao --
+}
+}
+}
+
+
+agora vamos colocar os parâmetros nome e portas na variveis, e as blindagens e muniçao
+
+const c2 = new militar(forte, 2, 100, 50)
+//posso tbm mudar corr por fora, n tem problema
+//c2.setcor('azul')
+
+
+isso que é herança
+posso criar vários tipos de carros e etc
+
+
+
+
+
+

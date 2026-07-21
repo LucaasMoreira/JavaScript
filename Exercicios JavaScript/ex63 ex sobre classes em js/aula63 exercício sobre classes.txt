@@ -1,0 +1,57 @@
+aula63 exercício sobre classes
+anotando coisas importantes
+
+usando script anterior nos vai fazer com que so pode add numero de munição e blindagem
+quando for tipo militar e não normal
+
+
+1 - nos chama os imput do tipo do carro pro javaScript e coloca um evento
+1.1 - oq vamos fazer, quando for o militar nos tem que tirar o disable de blindagem e munição - estudarei a questão disso
+// reserva de espaço 
+
+
+1.2 - pega o id de blindagem e munição e da um #.removeatribute(disable)  quando for clicado no militar
+      e da setattribute(disable) no tipo normal
+1.2.1 - set add
+        remove remover
+1.2.2 - mas é interessante nos definir o value para zero no imput, tanto blindagem quanto munição no normal e militar
+
+
+1.3 - vamos criar agr uma função que cria ou gerencia as class e add no nosso campo, pra isso vamos criar uma variável carro que vai ser um array
+
+
+1.4 - agr vamos criar uma função que quando chamada eu vou
+1.4.1 - zerar o conteúdo de carros  - carros é a div que exibe quando nos criar
+1.4.2 - e add o molde carro que nos criar
+1.4.3 - então vamos criar uma div logo em seguida e da um atributo class nela
+1.4.4 - pos isso vamos fala que a div vai receber o conteúdo do array carros
+1.4.5 - vamos pegar o array e usar map ou foreach e cada elemento ele vai criar as coisas por cima
+        tanto que isso era para ser feito primeiro antes de criar a div, mas so muda dps, sem problemas
+1.4.6 - e vamos pegar então o parâmetro e fazer a div receber o conteúdo do array com o valor nome(que seria o parâmetro do molde da class)
+1.4.7 - damos appendchild na div em que sera exibido
+
+
+1.5 - após criar a função principal nos vai fazer que ela exibe após aperta o botão add, então nos pega o id e cria um evento simples
+1.5.1 - toda vez que for clicar ele chama a função que nos fez de exibição
+
+
+1.6 - como nos vamos criar o carro, nos precisamos instancia ou a class carro(normal) ou class militar de acordo qual foi clicado la no
+      tipo de carro
+1.6 - quando clicar no botão eu tenho que ver qual carro foi selecionado - fazer antes tbm
+1.6.2 - dou um if seleciono, ex: o normal e verifico se ele esta checked, caso esteja ele instancia mas os valores vai ser o valor do imput
+        nome e o 2 valor seri o valo do imput portas
+1.6.3 - e damos o push no a carros com valor que seria a varivel que foi instaciado
+1.6.4 - caso 'ao contrario' for militar nos instancia tbm e da push tbm, so que vamos adicionar a blindagem e munição
+1.6.5 - então pegamos os id e etc deles e  adiciona a variável que sera instaciando so acrescentando do lado
+1.6.6 - seria interessante que limpasse o valor do imput todas vez que add
+1.6.7 - vamos agr adicionar la que nos fez no começo na questão do tipo da o valor do imput, para que n tenha nada '' na imput nome e 
+        portas pra zero '' nos dois tipos
+1.6.8 -  e vamos acrescentar na função de exibição pra que mostra na div além do nome, as portas, blindagem e munição, lembrando que
+         sempre que for adicionar uma nova informação usamos o incremento += para que n substituaa o valor que esta na div
+
+
+1.7 - corrigindo na hora do if else. principalmente do else, quando for instancia ser a class militar e n carro, se n da erro na questão 
+      que certas informações vão estar 'undefined'
+
+
+
